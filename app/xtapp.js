@@ -5,7 +5,7 @@ var xtApp = angular.module('xtApp', ["ui.router"])
       
 
       // For any unmatched url, send to /route1
-      $urlRouterProvider.otherwise("/home")
+      // $urlRouterProvider.otherwise("/home")
       
       $stateProvider
         .state('home', {
@@ -18,6 +18,12 @@ var xtApp = angular.module('xtApp', ["ui.router"])
             url: "/coursesList",
             templateUrl: "app/templates/coursesList.html",
             controller:"coursesListController",
+        })
+		
+		.state('deatil', {
+            url: "/detail",
+            templateUrl: "app/templates/detail.html",
+            controller:"detailController",
         });
     })
          
