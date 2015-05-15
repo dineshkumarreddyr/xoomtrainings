@@ -12,6 +12,12 @@ var xtApp = angular.module('xtApp', ["ui.router"])
             url: "/home",
             templateUrl: "app/templates/home.html",
             controller:"AccessController",
+        })
+		
+		.state('coursesList', {
+            url: "/coursesList",
+            templateUrl: "app/templates/coursesList.html",
+            controller:"coursesListController",
         });
     })
          
