@@ -1,4 +1,4 @@
-xtApp.controller('AccessController',['$scope','$http',function($scope,$http){
+xtApp.controller('accessController',['$scope','$http',function($scope,$http){
 	(function(){
 		"use strict";
 // Login CALL
