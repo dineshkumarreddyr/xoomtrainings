@@ -1,6 +1,7 @@
-xtApp.controller('accessController',['$scope','$http',function($scope,$http){
+xtApp.controller('accessController',['$scope','$http','xtApp.config',function($scope,$http,$xtAppConfig){
 	(function(){
 		"use strict";
+
 // Login CALL
 $scope.login=function(){
 	var data={};
@@ -18,13 +19,13 @@ $scope.login=function(){
                .error(function(res,status,headers,config){
                	console.log(status);
                });
-           }
+             }
 
-       }catch(e){
+           }catch(e){
 
-       	console.log(e.message);
-       }
-   }
+            console.log(e.message);
+          }
+        }
 // Sign in Validation
 $scope.isSigninValid = function(){
 	if($scope.loginUserName!=undefined && $scope.loginUserName!= null && $scope.loginPassword!=undefined && $scope.loginPassword!= null)
@@ -35,28 +36,28 @@ $scope.isSigninValid = function(){
 //SIgnup Calls
 
 $scope.signup = function(){
-   var data = {};
-   try{
-   	if($scope.isSignupValid()){
-   		data.firstname = $scope.firstName;
-   		data.lastname = $scope.LastName;
-   		data.email = $scope.emailAddress;
-   		data.password = $scope.userPassword;
-   		data.password = $scope.userPassword;
-   		data.confirmpwd = $scope.confirmPassword;
-   		data.mobile = $scope.mobileNumber;
+ var data = {};
+ try{
+  if($scope.isSignupValid()){
+   data.firstname = $scope.firstName;
+   data.lastname = $scope.LastName;
+   data.email = $scope.emailAddress;
+   data.password = $scope.userPassword;
+   data.password = $scope.userPassword;
+   data.confirmpwd = $scope.confirmPassword;
+   data.mobile = $scope.mobileNumber;
 		// post methods to trigger data
 		$http.post('url',data).success(function(res,status,headers,config){
-           
+
 
 		}).error(function(res,status,headers,config){
 
 		});
-   	}
+  }
 
-   } catch(e){
+} catch(e){
 
-   };
+};
 
 
 };

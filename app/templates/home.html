@@ -17,6 +17,11 @@
                     <input type="text" name="lastname" id="lastname" tabindex="2" class="form-control" placeholder="Lastname" ng-model="LastName">
                   </div>
                   <div class="form-group col-md-12">
+                    <select class="form-control" ng-model="usercountry" ng-options="item.countryid as item.countryname for item in countryitems">
+                      <option value="">Select country</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-12">
                     <input type="text" name="email" id="email" tabindex="2" class="form-control" placeholder="Email address" ng-model="emailAddress">
                   </div>
                   <div class="form-group col-md-12">
@@ -70,7 +75,7 @@
      <ul>
 	   <li><a href="#">Courses</a></li>
 	   <li><a href="#">Cart <img src="app/assets/images/cart.png" alt="cart icon"></a></li>
-	   <li><a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">Signin</a></li>
+	   <li><a href="javascript:void(0)" data-toggle="modal" data-target=".bs-example-modal-lg">Signin</a></li>
 	   <li><a href="#">Signup</a></li>
      </ul>
    </div>
