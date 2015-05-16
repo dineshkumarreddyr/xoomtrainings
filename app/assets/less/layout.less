@@ -9,6 +9,9 @@
 body{margin:@basezero;padding:@basezero;font-family: 'Open Sans', sans-serif;}
 *{outline:none}
 a:hover{text-decoration:none}
+.btn{border:none;border-radius:0px;}
+.no-pad{padding:0}
+.no-marg{margin:0}
 h2{color:@PrimaryBgClr;text-transform:uppercase;text-align:center;font-weight:600;
 font-size:20px;margin:25px 0;}
 
@@ -114,7 +117,30 @@ text-transform:uppercase;text-align:center;margin:0 auto;width:50%;margin-bottom
 .detail-left h2{color:@PrimaryBgClr;border-top:1px solid @PrimaryBgClr;border-bottom:1px solid @PrimaryBgClr;
 text-transform:uppercase;padding-top:7px;padding-bottom:7px;text-align:left;font-size:16px;}
 
+.detail-main{background:#fff;padding-bottom:20px;margin-bottom:15px;}
+.detail-main h1{color:@PrimaryBgClr;font-size:22px;margin-top:0;}
+.detail-main{padding:10px}
+.detail-main h3{color:#666;font-size:18px;}
+.sample-record{background:@PrimaryBgClr;color:#fff;width:100%;border-radius:0px;text-transform:uppercase;}
+.sample-record:hover{color:#fff;}
 
+ul.upcoming-boxes{margin:0 0 10px 0;padding:0;}
+ul.upcoming-boxes li{float: left;list-style-type: none; margin-bottom: 10px;
+  background: #f8f8f8; border: 1px solid #ddd; text-align: center; padding-top: 5px;
+  width: 24%; padding-bottom: 5px; padding-left: 0; padding-right: 0; font-size: 12px;
+  margin: 3px 2px;}
 
+.detail-tabs .nav-tabs > li > a{color:#666;background:#f8f8f8;border:1px solid #ddd;border-radius:3px;
+background:#fff;text-transform:uppercase;font-size: 12px;margin-bottom: 10px;}
+.detail-tabs .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  color: #fff;cursor: default;background-color:@PrimaryBgClr;border: 1px solid @PrimaryBgClr;
+  border-bottom:none;border-radius:3px;}
+  .detail-tabs .nav-tabs{border-bottom:0px;}
+  .detail-tabs .tab-content{background:#fff;padding:10px;}
 
+.detail-tabs .panel{box-shadow:none;border-bottom:1px solid #ddd;border-radius:0px;}
+.detail-tabs .panel > .panel-heading {position: relative;padding:10px;}
+.detail-tabs .panel-title > a.collapsed:after {content: '+';position: absolute;right: 24px;}
+.detail-tabs .panel-title > a:after { content: '-';position: absolute;right: 24px;}
 
+.detail-user-reviews{}
