@@ -1,6 +1,4 @@
-
-
-var xtApp = angular.module('xtApp', ['ui.router']);
+var xtApp = angular.module('xtApp', ['ui.router', 'ngCookies']);
 // Declaring global variables
 xtApp.value('xtApp.config', {
     apiUrl: 'http://localhost:9545/',
@@ -32,7 +30,7 @@ xtApp.config(['$locationProvider', '$stateProvider', '$urlRouterProvider',
       }).state('home.offerings', {
           url: '/offerings',
           templateUrl: "app/templates/inner/offerings.html",
-          controller: 'accessController'
+          controller: 'courselistController'
       }).state('home.list', {
           url: '/courselist',
           templateUrl: 'app/templates/inner/list.html'
@@ -41,4 +39,31 @@ xtApp.config(['$locationProvider', '$stateProvider', '$urlRouterProvider',
           templateUrl: 'app/templates/inner/detail.html'
       });
   }]);
+
+//Route verification
+xtApp.run(['$rootScope', '$location', '$state', '$timeout', '$cookieStore', 'xtApp.config', 'managecookies',
+function ($rootScope, $location, $state, $timeout, $cookies, $xtConfig, $manageCookies) {
+    var isSessionExist = false;
+    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+        if (!$manageCookies.bind() && toState.name.toLowerCase() !== 'home.offerings')
+            $timeout(function () {
+                $state.go('home.offerings');
+            });
+    });
+}]);
+
+//Cookie service
+xtApp.factory('managecookies', ['$http', '$cookieStore', 'xtApp.config', function ($http, $cookies, $xtAppConfig) {
+    return {
+        bind: function () {
+            if ($cookies.get('email') != undefined && $cookies.get('email') != null) {
+                $xtAppConfig.fullname = $cookies.get('fullname');
+                $xtAppConfig.email = $cookies.get('email');
+                $xtAppConfig.country = $cookies.get('country');
+                return true;
+            }
+            return false;
+        }
+    }
+}]);
 
