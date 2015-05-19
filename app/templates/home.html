@@ -75,7 +75,8 @@
             <ul>
                 <li><a href="#">Courses</a></li>
                 <li><a href="#">Cart <img src="app/assets/images/cart.png" alt="cart icon"></a></li>
-                <li><a href="javascript:void(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Signin/Signup</a></li>
+                <li ng-show="!userloggedin"><a href="javascript:void(0);" data-toggle="modal" data-target=".bs-example-modal-lg">Signin/Signup</a></li>
+                <li ng-show="userloggedin"><a href="javascript:void(0);">Welcome, {{fullname}} &nbsp;<i class="fa fa-chevron-down"></i></a></li>
             </ul>
         </div>
     </div>
