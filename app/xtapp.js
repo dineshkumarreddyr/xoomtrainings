@@ -34,17 +34,17 @@ function ($locationProvider, $stateProvider, $urlRouterProvider, $cryptoProvider
         templateUrl: "app/templates/inner/offerings.html",
         controller: 'courselistController'
     }).state('home.list', {
-        url: '/courselist/:courseId',
-        templateUrl: 'app/templates/inner/list.html',
+        url: '/courselist',
+        templateUrl: 'app/templates/inner/list.html'
+    }).state('home.detail', {
+        url: '/details/:courseId',
+        templateUrl: 'app/templates/inner/detail.html',
         controller: 'coursedetailController',
         resolve: {
             courseId: function ($stateParams, $crypto) {
                 return $crypto.encrypt($stateParams.courseId);
             }
         }
-    }).state('home.detail', {
-        url: '/details',
-        templateUrl: 'app/templates/inner/detail.html'
     });
 }]);
 

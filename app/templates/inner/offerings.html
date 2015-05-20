@@ -16,7 +16,7 @@
                     <div class="item active">
                         <div class="row">
                             <div class="col-md-3" ng-repeat="course in allCourses | filter:{xtcoursetype:'recommended'}">
-                                <a ui-sref="home.list({courseId:'{{course.xtcourseid}}'})">
+                                <a ui-sref="home.detail({courseId:'{{course.xtcourseid}}'})">
                                     <div class="recommended-each">
                                         <img ng-src="{{course.xtcourseimg}}" alt="sap course">
                                         <div class="course-title">{{course.xtcoursename}}</div>
@@ -151,10 +151,10 @@
     <h2>popular courses</h2>
     <div class="row">
         <div class="col-md-3" ng-repeat="course in allCourses | filter:{xtcoursetype: 'popular'}">
-            <div class="recommended-each">
-                <a href="#">
+            <a ui-sref="home.detail({courseId:'{{course.xtcourseid}}'})">
+                <div class="recommended-each">
                     <img ng-src="{{course.xtcourseimg}}" alt="sap course">
-                    <div class="course-title"><a href="#">{{course.xtcoursename}}</a></div>
+                    <div class="course-title">{{course.xtcoursename}}</div>
                     <div class="clearfix course-counts">
                         <div class="col-md-7 greenText">$ 389/- | Rs {{course.xtenrolled}}</div>
                         <div class="col-md-5 hours"><img src="app/assets/images/hours.png" alt="hours">24 Hours</div>
@@ -169,8 +169,8 @@
                                  class="img-responsive" alt="rating">
                         </div>
                     </div>
-                </a>
-            </div>
+                </div>
+            </a>
         </div>
         <div class="clearfix"></div>
     </div>
