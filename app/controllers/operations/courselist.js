@@ -1,6 +1,6 @@
 ﻿//Controller for course list in home screen
-xtApp.controller('courselistController', ['$scope', '$http', 'xtApp.config', 'xtApp.variables',
-    function ($scope, $http, $xtAppConfig, $xtAppVariables) {
+xtApp.controller('courselistController', ['$scope', '$http', 'xtApp.config', 'xtApp.variables', '$stateParams',
+    function ($scope, $http, $xtAppConfig, $xtAppVariables, $stateParams) {
 
         //Default array for course list
         $scope.allCourses = [];
