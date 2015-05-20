@@ -1,4 +1,4 @@
-var xtApp = angular.module('xtApp', ['ui.router', 'ngCookies']);
+var xtApp = angular.module('xtApp', ['ui.router', 'ngCookies', 'mdo-angular-cryptography']);
 // Declaring global variables
 xtApp.value('xtApp.config', {
     apiUrl: 'http://localhost:9545/',
@@ -16,29 +16,37 @@ xtApp.constant('xtApp.variables', {
 });
 
 // Configure angular routing
-xtApp.config(['$locationProvider', '$stateProvider', '$urlRouterProvider',
-  function ($locationProvider, $stateProvider, $urlRouterProvider) {
-      //$locationProvider.html5Mode(true);
-      // Default routing
-      //$urlRouterProvider.otherwise("/login");
-      $urlRouterProvider.when('/', '/offerings');
-      // Actual routing
-      $stateProvider.state('home', {
-          url: "/home",
-          templateUrl: "app/templates/home.html",
-          controller: 'homeController'
-      }).state('home.offerings', {
-          url: '/offerings',
-          templateUrl: "app/templates/inner/offerings.html",
-          controller: 'courselistController'
-      }).state('home.list', {
-          url: '/courselist',
-          templateUrl: 'app/templates/inner/list.html'
-      }).state('home.detail', {
-          url: '/details',
-          templateUrl: 'app/templates/inner/detail.html'
-      });
-  }]);
+xtApp.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', '$cryptoProvider',
+function ($locationProvider, $stateProvider, $urlRouterProvider, $cryptoProvider) {
+
+    $cryptoProvider.setCryptographyKey('xoom!090');
+    //$locationProvider.html5Mode(true);
+    // Default routing
+    //$urlRouterProvider.otherwise("/login");
+    $urlRouterProvider.when('/', '/offerings');
+    // Actual routing
+    $stateProvider.state('home', {
+        url: "/home",
+        templateUrl: "app/templates/home.html",
+        controller: 'homeController'
+    }).state('home.offerings', {
+        url: '/offerings',
+        templateUrl: "app/templates/inner/offerings.html",
+        controller: 'courselistController'
+    }).state('home.list', {
+        url: '/courselist/:courseId',
+        templateUrl: 'app/templates/inner/list.html',
+        controller: 'coursedetailController',
+        resolve: {
+            courseId: function ($stateParams, $crypto) {
+                return $crypto.encrypt($stateParams.courseId);
+            }
+        }
+    }).state('home.detail', {
+        url: '/details',
+        templateUrl: 'app/templates/inner/detail.html'
+    });
+}]);
 
 //Route verification
 xtApp.run(['$rootScope', '$location', '$state', '$timeout', '$cookieStore', 'xtApp.config', 'managecookies',
