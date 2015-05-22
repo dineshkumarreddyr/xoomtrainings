@@ -19,11 +19,11 @@ xtApp.constant('xtApp.variables', {
 xtApp.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', '$cryptoProvider',
 function ($locationProvider, $stateProvider, $urlRouterProvider, $cryptoProvider) {
 
+    $locationProvider.html5Mode(true).hashPrefix('!');
+
     $cryptoProvider.setCryptographyKey('xoom!090');
     //$locationProvider.html5Mode(true);
-    // Default routing
-    //$urlRouterProvider.otherwise("/login");
-    $urlRouterProvider.when('/', '/offerings');
+    //$urlRouterProvider.when('/', '/offerings');
     // Actual routing
     $stateProvider.state('home', {
         url: "/home",
@@ -46,6 +46,8 @@ function ($locationProvider, $stateProvider, $urlRouterProvider, $cryptoProvider
             }
         }
     });
+
+    $urlRouterProvider.otherwise("/home/offerings");
 }]);
 
 //Route verification
