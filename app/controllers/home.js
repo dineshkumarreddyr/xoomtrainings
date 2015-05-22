@@ -84,10 +84,10 @@ xtApp.controller('homeController', ['$scope', '$http', 'xtApp.config', 'xtApp.va
                             else if (res != undefined && res.status != undefined && res.status.indexOf('error') > -1) {
                                 switch (res.ecode) {
                                     case 'e1':
-                                        $scope.accountShow = true;
-                                        $scope.msgClass = 'alert alert-danger';
-                                        $scope.alertMsg = $xtAppVariable.accountExists;
-                                        break;
+                                    $scope.accountShow = true;
+                                    $scope.msgClass = 'alert alert-danger';
+                                    $scope.alertMsg = $xtAppVariable.accountExists;
+                                    break;
                                 }
                             }
                         }).error(function (res, status, headers, config) {
@@ -128,10 +128,29 @@ xtApp.controller('homeController', ['$scope', '$http', 'xtApp.config', 'xtApp.va
                                 //Sign in Fn
                                 fnUseraction();
                             }
+                            else if(res!=undefined && res.status!=undefined && res.status.indexOf('error')>-1){
+                                switch(res.ecode){
+                                    case 'e2':
+                                    $scope.accountShow = true;
+                                    $scope.msgClass = 'alert alert-danger';
+                                    $scope.alertMsg = $xtAppVariable.noLogin;
+                                    break;
+                                    case 'e3':
+                                    $scope.accountShow = true;
+                                    $scope.msgClass='alert alert-danger';
+                                    $scope.alertMsg=$xtAppVariable.apiFail;
+                                    break;                                
+                                }
+                            }
 
                         }).error(function (res, status, headers, conf) {
 
                         });
+                    }
+                    else{
+                        $scope.accountShow = true;
+                        $scope.msgClass='alert alert-danger';
+                        $scope.alertMsg=$xtAppVariable.accountMandatory;
                     }
                 } catch (exception) {
                     console.log(exception.message);
