@@ -29,7 +29,8 @@ xtApp.controller('coursedetailController', ['$scope', '$http', 'xtApp.config', '
             if(res!=undefined && res.status!=undefined && res.status.indexOf('success')>-1){
                 $scope.courseUrl = res.records[0].xtcourseimg;
                 $scope.litecoursename = res.records[0].xtcoursename;
-                $scope.litecourseprice = res.records[0].xtenrolled;
+                $scope.litecourseprice = res.records[0].xtinrprice;
+                $scope.liteusprice = res.records[0].xtusprice;
                 $scope.liteduration = res.records[0].xtcourseduration;
             }
         }).error(function(res,status,headers,conf){

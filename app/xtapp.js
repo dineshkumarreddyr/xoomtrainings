@@ -15,15 +15,13 @@ xtApp.constant('xtApp.variables', {
     apiFail: "OOPS! Something went wrong. Sorry for inconvenience.",
     noLogin:"Login Failed. Please check username and password.",
     noEmail:"Provided email address not registed with us. Please check and re-enter the registered email address",
-    sendLink:"A password change link has been sent to your registered email address. Please check your inbox"
+    sendLink:"A password change link has been sent to your registered email address. Please check your inbox",
+    noPassmatch:"Password and confirm are not same.Please verify your password."
 });
 
 // Configure angular routing
 xtApp.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', '$cryptoProvider',
     function ($locationProvider, $stateProvider, $urlRouterProvider, $cryptoProvider) {
-
-        $locationProvider.html5Mode(true).hashPrefix('!');
-
         $cryptoProvider.setCryptographyKey('xoom!090');
     //$locationProvider.html5Mode(true);
     //$urlRouterProvider.when('/', '/offerings');
@@ -32,6 +30,10 @@ xtApp.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', '$cry
         url: "/home",
         templateUrl: "app/templates/home.html",
         controller: 'homeController'
+    }).state('home.forgotpassword',{
+        url:'/forgotpassword',
+        templateUrl:'app/templates/inner/forgotpassword.html',
+        controller:'forgotPasswordController'
     }).state('home.offerings', {
         url: '/offerings',
         templateUrl: "app/templates/inner/offerings.html",
@@ -48,12 +50,10 @@ xtApp.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', '$cry
                 return $crypto.encrypt($stateParams.courseId);
             }
         }
-    }).state('home.forgotpassword',{
-        url:'/forgotpassword',
-        templateUrl:'app/templates/inner/forgotpassword.html'
     });
 
     $urlRouterProvider.otherwise("/home/offerings");
+    $locationProvider.html5Mode(true).hashPrefix('!');
 }]);
 
 //Route verification
@@ -84,3 +84,104 @@ xtApp.factory('managecookies', ['$http', '$cookieStore', 'xtApp.config', functio
     }
 }]);
 
+//Directive for Alert messages
+xtApp.directive('alert',function(){
+    return{
+        restrict:'AEC',
+        scope:{
+            property:'=values'
+        },
+        template:"<div class='{{property.class}}'>{{property.message}}</div>"
+    }
+});
+
+// Directive for Close Modal
+xtApp.directive('signupModal', function() {
+   return {
+     restrict: 'A',
+     link: function(scope, element, attr) {
+       scope.dismiss = function() {
+           element.modal('hide');
+       };
+   }
+} 
+});
+
+// Service for Spinner
+xtApp.service('SpinnerService', [function () {
+    var isSpinnerOn;
+    this.busyOn = function () {
+        if (!isSpinnerOn) {
+            var spinnerImage = $('<div></div>').css({
+                height: 60,
+                width: 60,
+                background: 'url(app/assets/images/busy.GIF)',
+                'margin-top': 15,
+                'margin-left': 20,
+                'background-size':'cover'
+            });
+
+            var spinnerText = $('<div>Loading...</div>').css({
+                'margin-left': 72,
+                'margin-top': 35
+            });
+
+            var spinnerBusy = $('<div></div')
+            .attr({
+                id: 'busySpinner'
+            })
+            .css({
+                height: 100,
+                width: 100,
+                'background-color': '#fff',
+                position: 'fixed',
+                top: (window.innerHeight - 200) / 2,
+                left: (window.innerWidth - 100) / 2,
+                'z-index': 99999,
+                'border-radius':'50%'
+            });
+
+            spinnerImage.appendTo(spinnerBusy);
+                //spinnerText.appendTo(spinnerBusy);
+                spinnerBusy.appendTo(document.body);
+
+                $('<div></div>').attr({
+                    id: 'busy',
+                    fade_opacity: 500,
+                    speed: 0.5
+                }).css({
+                    background: '#000',
+                    height: $(document).height(),
+                    left: '0px',
+                    position: 'fixed',
+                    top: '0px',
+                    width: '100%',
+                    zIndex: 9999
+                    //height:'100vh'
+                }).appendTo(document.body).fadeTo(500, 0.8);
+
+                $(window).bind('resize', function () {
+                    $('#busy').css('height', $(document).height());
+                    spinnerBusy.css({
+                        top: (window.innerHeight - 200) / 2,
+                        left: (window.innerWidth - 200) / 2
+                    });
+                });
+                isSpinnerOn = true;
+            }
+        },
+
+        this.busyOff = function () {
+            $('#busy').remove();
+            if ($('#busySpinner')) {
+                $.when(
+                    $('#busySpinner').remove()
+                    ).done(function () {
+                        isSpinnerOn = false;
+                    });
+                }
+            //isSpinnerOn = false;
+            $('[rel="tooltip"]').tooltip();
+        };
+
+    }]);
