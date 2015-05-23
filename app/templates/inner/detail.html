@@ -9,7 +9,7 @@
                         <img ng-src="{{courseUrl}}" alt="sap course">
                         <div class="course-title"><a href="#">{{litecoursename}}</a></div>
                         <div class="clearfix course-counts">
-                            <div class="col-md-7 greenText">$ 389/- | Rs {{litecourseprice}}</div>
+                            <div class="col-md-7 greenText">$ {{liteusprice}} | Rs {{litecourseprice}}</div>
                             <div class="col-md-5 hours"><img src="app/assets/images/hours.png" alt="hours">{{liteduration}} Hours</div>
                         </div>
                         <div class="clearfix course-bottom">
@@ -106,8 +106,7 @@
                     <h1>{{coursename}}</h1>
                     <p>{{coursedescp}}</p>
                     <button class="btn sample-record">
-                        Watch sample class recording
-                        <img src="app/assets/images/play.png">
+                        Watch sample class recording &nbsp;&nbsp;<a href="#"><i class="fa fa-play"></i></a>
                     </button>
                     <h3>Upcoming Batches:</h3>
                     <ul class="clearfix upcoming-boxes">
@@ -118,7 +117,7 @@
                         <li class="col-md-3">{{coursestartdate}}</li>
                         <li class="col-md-3">{{courseduration}}</li>
                         <li class="col-md-3">{{coursedays}}</li>
-                        <li class="col-md-3">07:00AM - 10:00AM</li>
+                        <li class="col-md-3">{{coursetiming}}</li>
                     </ul>
                     <div class="col-md-12 text-center"><button class="btn btn-primary">Enroll</button></div>
                     <div class="clearfix"></div>
