@@ -1,5 +1,5 @@
 <!--login modal starts-->
-<div class="modal fade access-popup bs-example-modal-lg" signup-Modal tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade access-popup bs-example-modal-lg" signup-modal tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -7,7 +7,7 @@
                 <h4 class="modal-title" id="myModalLabel">Signup / Login to Continue</h4>
             </div>
             <div class="modal-body clearfix">
-            <alert values="alertOperation" ng-show="alertOperation.alertDisplay"></alert>
+                <xt-alert values="alertOperation" ng-show="alertOperation.alertDisplay"></xt-alert>
                 <div class="col-md-6">
                     <div class="col-md-12"><h2>Signup</h2></div>
                     <form id="signup-form" role="form">
@@ -56,7 +56,7 @@
                                 <input type="submit" name="login-submit" id="signup-submit" tabindex="1" class="form-control btn btns col-md-12" value="LogIn" ng-click="signin()">
                             </div>
                         </div>
-                        <div class="forgot col-md-12" data-dismiss="modal" >Forgot Password <a ui-sref="home.forgotpassword">click here</a></div>
+                        <div class="forgot col-md-12" data-dismiss="modal">Forgot Password <a ui-sref="home.forgotpassword">click here</a></div>
                     </form>
                 </div>
             </div>
@@ -74,7 +74,18 @@
                 <li><a href="#">Courses</a></li>
                 <li><a href="#">Cart <img src="app/assets/images/cart.png" alt="cart icon"></a></li>
                 <li ng-show="!userloggedin"><a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">Signin/Signup</a></li>
-                <li ng-show="userloggedin"><a href="#">Welcome, {{fullname}} &nbsp;<i class="fa fa-chevron-down"></i></a></li>
+                <li ng-show="userloggedin">
+                    <div class="btn-group" dropdown>
+                        <div class="dropdown-toggle" dropdown-toggle>
+                            <a href="#">Welcome, {{fullname}} &nbsp;<i class="fa fa-chevron-down"></i></a>
+                        </div>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">My Courses</a></li>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#" ng-click="signout()">Sign out</a></li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
@@ -98,7 +109,7 @@
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                        aria-expanded="false"><img src="app/assets/images/menuicon.png" alt="menuicon">Browse Courses</span></a>
+                           aria-expanded="false"><img src="app/assets/images/menuicon.png" alt="menuicon">Browse Courses</span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#">Action</a></li>
                             <li><a href="#">Another action</a></li>
@@ -124,50 +135,50 @@
             <div class="col-md-3">
                 <ul>
                     <li>courses
-                        <li>
-                            <li><a href="#">data warehouse technologies</a></li>
-                            <li><a href="#">microstrategy</a></li>
-                            <li><a href="#">pega</a></li>
-                            <li><a href="#">sap</a></li>
-                            <li><a href="#">oracle</a></li>
-                            <li><a href="#">microsoft</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <ul>
-                            <li>&nbsp;
-                                <li>
-                                    <li><a href="#">database</a></li>
-                                    <li><a href="#">big data</a></li>
-                                    <li><a href="#">testing tools</a></li>
-                                    <li><a href="#">java</a></li>
-                                    <li><a href="#">mobile applications</a></li>
-                                    <li><a href="#">other courses</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-3">
-                                <ul>
-                                    <li>reach out to us 27x7
-                                        <li>
-                                            <li><a href="#">Web analytics</a></li>
-                                            <li><a href="#">Presentations</a></li>
-                                            <li><a href="#">Code snippets</a></li>
-                                            <li><a href="#">Job board</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <ul>
-                                            <li>Documentation
-                                                <li>
-                                                    <li><a href="#">Product Help</a></li>
-                                                    <li><a href="#">Developer API</a></li>
-                                                    <li><a href="#">Product Markdown</a></li>
-                                                    <li><a href="#">Product Pages</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    <li>
+                    <li><a href="#">data warehouse technologies</a></li>
+                    <li><a href="#">microstrategy</a></li>
+                    <li><a href="#">pega</a></li>
+                    <li><a href="#">sap</a></li>
+                    <li><a href="#">oracle</a></li>
+                    <li><a href="#">microsoft</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <ul>
+                    <li>&nbsp;
+                    <li>
+                    <li><a href="#">database</a></li>
+                    <li><a href="#">big data</a></li>
+                    <li><a href="#">testing tools</a></li>
+                    <li><a href="#">java</a></li>
+                    <li><a href="#">mobile applications</a></li>
+                    <li><a href="#">other courses</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <ul>
+                    <li>reach out to us 27x7
+                    <li>
+                    <li><a href="#">Web analytics</a></li>
+                    <li><a href="#">Presentations</a></li>
+                    <li><a href="#">Code snippets</a></li>
+                    <li><a href="#">Job board</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <ul>
+                    <li>Documentation
+                    <li>
+                    <li><a href="#">Product Help</a></li>
+                    <li><a href="#">Developer API</a></li>
+                    <li><a href="#">Product Markdown</a></li>
+                    <li><a href="#">Product Pages</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

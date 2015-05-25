@@ -1,6 +1,6 @@
 ﻿//Controller for course details
-xtApp.controller('coursedetailController', ['$scope', '$http', 'xtApp.config', 'xtApp.variables', '$stateParams', '$state',
-    function ($scope, $http, $xtAppConfig, $xtAppVariables, $stateParams, $state) {
+xtApp.controller('coursedetailController', ['$scope', '$http', 'xtApp.config', 'xtApp.variables', '$stateParams', '$state','$filter',
+    function ($scope, $http, $xtAppConfig, $xtAppVariables, $stateParams, $state, $filter) {
 
         console.log($stateParams.courseId);
 
