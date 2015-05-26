@@ -1,5 +1,5 @@
 /* Created by Dinesh Kumar 22-05-2015 */
-xtApp.controller('forgotPasswordController', ['$scope','$http','xtApp.config','xtApp.variables',
+xtApp.controller('forgotPasswordController', ['$scope','$http','$xoomConfig','xtApp.variables',
 	function($scope,$http,$xtAppConfig,$xtAppVariables){
 
 		// Default alert message

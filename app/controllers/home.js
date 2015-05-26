@@ -1,5 +1,5 @@
 /* Created by Dinesh 16-05-2015 */
-xtApp.controller('homeController', ['$scope', '$http', 'xtApp.config', 'xtApp.variables', '$cookieStore', 'managecookies', 'SpinnerService', '$state',
+xtApp.controller('homeController', ['$scope', '$http', '$xoomConfig', 'xtApp.variables', '$cookieStore', 'managecookies', 'SpinnerService', '$state',
     function ($scope, $http, $xtAppConfig, $xtAppVariable, $cookies, $managecookies, $SpinnerService, $state) {
         (function () {
             "use strict";

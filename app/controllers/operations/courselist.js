@@ -1,5 +1,5 @@
 ﻿//Controller for course list in home screen
-xtApp.controller('courselistController', ['$scope', '$http', 'xtApp.config', 'xtApp.variables', '$stateParams','SpinnerService','$timeout',
+xtApp.controller('courselistController', ['$scope', '$http', '$xoomConfig', 'xtApp.variables', '$stateParams','SpinnerService','$timeout',
     function ($scope, $http, $xtAppConfig, $xtAppVariables, $stateParams,$SpinnerService,$timeout) {
 
         //Default array for course list
