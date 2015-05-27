@@ -13,7 +13,7 @@
                             <div class="col-md-5 hours"><img src="app/assets/images/hours.png" alt="hours">{{liteduration}} Hours</div>
                         </div>
                         <div class="clearfix course-bottom">
-                            <div class="col-md-6 learners-count"><span>500 Learners</div>
+                            <div class="col-md-6 learners-count"><span>{{litelearners}} Learners</div>
                             <div class="col-md-6 course-rating">
                                 <img src="app/assets/images/rating.png"
                                      class="img-responsive" alt="rating">
@@ -150,65 +150,25 @@
                             </ul>
                             <div class="clearfix tab-content">
                                 <div class="tab-pane active" id="tab_1">
-                                    <p>
-                                        about the course
-                                    </p>
-                                    <p>
-                                        Duis autem eum iriure dolor in hendrerit in vulputate velit esse molestie consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
-                                    </p>
+                                    <p>{{aboutcourse}}</p>
                                 </div>
                                 <div class="tab-pane" id="tab_2">
-                                    <p>Tab 2.</p>
-                                    <p>
-                                        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation.
-                                    </p>
+                                    <p>{{curriculum}}</p>
                                 </div>
                                 <div class="tab-pane" id="tab_3">
                                     <div class="col-md-12 no-pad">
                                         <div class="panel-group" id="accordion">
-                                            <div class="panel">
+                                            <div class="panel" ng-repeat="item in courseDetail">
                                                 <div class="panel-heading">
                                                     <h4 class="panel-title">
-                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="collapsed">
-                                                            Vivamus sagittis egestas mauris
+                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index}}" class="collapsed">
+                                                            {{item.question}}
                                                         </a>
                                                     </h4>
                                                 </div>
-                                                <div id="collapse1" class="panel-collapse collapse">
+                                                <div id="collapse{{$index}}" class="panel-collapse collapse">
                                                     <div class="panel-body">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis egestas mauris ut vehicula. Cras viverra ac orci ac aliquam. Nulla eget condimentum mauris, eget tincidunt est.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="panel">
-                                                <div class="panel-heading">
-                                                    <h4 class="panel-title">
-                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="collapsed">
-                                                            Cras viverra ac orci ac
-                                                        </a>
-                                                    </h4>
-                                                </div>
-                                                <div id="collapse2" class="panel-collapse collapse">
-                                                    <div class="panel-body">
-                                                        <p>
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis egestas mauris ut vehicula. Cras viverra ac orci ac aliquam. Nulla eget condimentum mauris, eget tincidunt est.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="panel panel">
-                                                <div class="panel-heading">
-                                                    <h4 class="panel-title">
-                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="collapsed">
-                                                            Sed Diam Nonummy Euismod
-                                                        </a>
-                                                    </h4>
-                                                </div>
-                                                <div id="collapse3" class="panel-collapse collapse" s>
-                                                    <div class="panel-body">
-                                                        <p>
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis egestas mauris ut vehicula. Cras viverra ac orci ac aliquam. Nulla eget condimentum mauris, eget tincidunt est.
-                                                        </p>
+                                                        <p>{{item.answer}}</p>
                                                     </div>
                                                 </div>
                                             </div>

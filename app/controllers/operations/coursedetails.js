@@ -2,7 +2,7 @@
 xtApp.controller('coursedetailController', ['$scope', '$http', '$xoomConfig', 'xtApp.variables', '$stateParams', '$state','$filter',
     function ($scope, $http, $xtAppConfig, $xtAppVariables, $stateParams, $state, $filter) {
 
-        console.log($stateParams.courseId);
+        $scope.courseDetail = [];
 
         if ($stateParams.courseId != undefined && $stateParams.courseId != null) {
             $http.post($xtAppConfig.apiUrl + 'details', { "courseid": $stateParams.courseId }).success(function (res, status, headers, conf) {
@@ -27,11 +27,17 @@ xtApp.controller('coursedetailController', ['$scope', '$http', '$xoomConfig', 'x
         // Call to get the course lite details
         $http.post($xtAppConfig.apiUrl+'courselite',{"courseid":$stateParams.courseId}).success(function(res,status,headers,conf){
             if(res!=undefined && res.status!=undefined && res.status.indexOf('success')>-1){
-                $scope.courseUrl = res.records[0].xtcourseimg;
-                $scope.litecoursename = res.records[0].xtcoursename;
-                $scope.litecourseprice = res.records[0].xtinrprice;
-                $scope.liteusprice = res.records[0].xtusprice;
-                $scope.liteduration = res.records[0].xtcourseduration;
+                $scope.courseUrl = res.records[0].courseimglocation;
+                $scope.litecoursename = res.records[0].coursename;
+                $scope.litecourseprice = res.records[0].indianprice;
+                $scope.liteusprice = res.records[0].usprice;
+                $scope.liteduration = res.records[0].courseduration;
+                $scope.litelearners = res.records[0].learners;
+                $scope.literating  =res.records[0].rating;
+                $scope.aboutcourse = res.records[0].aboutcourse;
+                $scope.curriculum = res.records[0].curriculum;
+
+                $scope.courseDetail = res.records;
             }
         }).error(function(res,status,headers,conf){
 
