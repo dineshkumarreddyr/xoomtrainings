@@ -24,6 +24,9 @@ xtApp.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', '$cry
         }).state('home.list', {
             url: '/courselist',
             templateUrl: 'app/templates/inner/list.html'
+        }).state('home.checkout', {
+            url: '/checkout',
+            templateUrl: 'app/templates/inner/checkout.html'
         }).state('home.detail', {
             url: '/details/:courseId',
             templateUrl: 'app/templates/inner/detail.html',
