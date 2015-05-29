@@ -12,8 +12,10 @@ a:hover{text-decoration:none}
 .btn{border:none;border-radius:0px;}
 .no-pad{padding:0}
 .no-marg{margin:0}
+.no-pad-rt{padding-right:0px;}
 h2{color:@PrimaryBgClr;text-transform:uppercase;text-align:center;font-weight:600;
 font-size:20px;margin:25px 0;}
+input[type="text"] {height:30px;padding:5px;}
 
 /************* HEADER STYLES *******************/
 
@@ -78,10 +80,10 @@ text-transform:uppercase;text-align:center;margin:0 auto;width:50%;margin-bottom
 .carousel-control.left {left:-25px;}
 .carousel-control.right {right:-25px;}
 
-.footer{padding:0}
+.footer{padding:0;}
 .foot-note{background:#f2f2f2;padding:10px 0;font-size:14px;margin-top:15px;}
 .foot-note a{color:@PrimaryBgClr;}
-.foot-main{padding-top:20px;padding-bottom:20px}
+.foot-main{padding-top:20px;padding-bottom:20px;border-top:1px solid #ddd;}
 .foot-main ul{margin:0;padding:0}
 .foot-main ul li{list-style-type:none;margin-bottom:5px;color:@PrimaryBgClr;text-transform:uppercase;}
 .foot-main ul li a{color:#666;font-size:14px;}
@@ -147,7 +149,45 @@ background:#fff;text-transform:uppercase;font-size: 12px;margin-bottom: 10px;}
 .detail-user-reviews{}
 .popular .courses:nth-child(5){clear:both;}
 
-/* styles override */
+/****************************/
+
+.checkout-wrap{margin-bottom:30px;}
+.check-each h3{background:@PrimaryBgClr;color:#fff;text-transform:uppercase;padding:10px;
+margin:0 0 15px 0;font-size:12px;text-align:center;}
+.check-box{border:1px solid #ddd;padding-top:15px;min-height:122px;
+margin-bottom:10px;}
+.check-box h4{color:#353535;font-size:16px;text-transform:uppercase;font-weight:600;
+margin-top:0;}
+.check-box .hours{padding-left:0;}
+.check-box ul{margin:0;padding:0}
+.check-box ul li{border-bottom:1px solid #ddd;color:#666;list-style-type:none;
+font-size:14px;padding:7px 15px;}
+.check-box ul li strong{color:@PrimaryBgClr;text-transform:uppercase;}
+.check-box ul li:last-child{border-bottom:0px;}
+.detail{color:#666;font-size:13px;padding:8px 15px;}
+.addmore{background:@PrimaryBgClr;color:#fff;text-align:center;padding:10px;width:100%;
+margin-bottom:10px;text-transform:uppercase;border:none;}
+.remove-check{margin-top:58px;text-align:right;}
+.remove-check a{color:@PrimaryBgClr;font-size:13px;}
+.apply{background:@PrimaryBgClr;font-size:13px;text-transform:uppercase;color:#fff;
+border:none;height:30px;}
+.line{height:1px;background:#ddd;margin-top:5px;margin-bottom:5px;width:100%;}
+.pay-wrap{padding-top:15px;padding-bottom:15px;border-top:1px solid #ddd;
+border-bottom:1px solid #ddd;margin-bottom:40px;text-align:center;}
+.pay-wrap button{background:@PrimaryBgClr;color:#fff;border:none;padding:5px 10px;
+margin-left:20px;}
+
+.select-style {padding: 0;margin: 0;border: 1px solid #ccc;
+width: 120px;border-radius: 3px;overflow: hidden;
+background-color: #fff;background: #fff url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 90% 50%;}
+.select-style select {padding: 5px 8px;width: 130%;border: none;box-shadow: none;
+background-color: transparent;background-image: none;-webkit-appearance: none;
+-moz-appearance: none;appearance: none;}
+.select-style select:focus {outline: none;}
+
+
+/**** styles override ****/
+
 .btn-group.open .dropdown-toggle{box-shadow:none !important;-webkit-box-shadow:none !important;}
 .open ul{
     padding-top:0px;width:100%;
