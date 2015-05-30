@@ -67,6 +67,7 @@ xtApp.factory('managecookies', ['$http', '$cookieStore', '$xoomConfig', function
                 $xtAppConfig.fullname = $cookies.get('fullname');
                 $xtAppConfig.email = $cookies.get('email');
                 $xtAppConfig.country = $cookies.get('country');
+                $xtAppConfig.userid = $cookies.get('userid');
                 return true;
             }
             return false;

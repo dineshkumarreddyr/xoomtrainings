@@ -1,9 +1,10 @@
 /* Xoom Config */
 angular.module('xoom.config',[]).value('$xoomConfig',{
-	apiUrl: 'http://10.86.90.174:9545/',
+	apiUrl: 'http://localhost:9545/',
 	fullname: '',
 	email: '',
-	country: ''
+	country: '',
+    userid:0
 }).constant('xtApp.variables', {
 	accountSuccess: "An email verification mail has been sent to your provided address. Please check your inbox",
 	accountExists: "User already registered with the provided email address. Please try sign in",

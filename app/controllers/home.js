@@ -1,8 +1,16 @@
 /* Created by Dinesh 16-05-2015 */
-xtApp.controller('homeController', ['$scope', '$http', '$xoomConfig', 'xtApp.variables', '$cookieStore', 'managecookies', 'SpinnerService', '$state',
-    function ($scope, $http, $xtAppConfig, $xtAppVariable, $cookies, $managecookies, $SpinnerService, $state) {
+xtApp.controller('homeController', ['$scope', '$http', '$xoomConfig', 'xtApp.variables', '$cookieStore', 'managecookies', 'SpinnerService', '$state', '$log',
+    function ($scope, $http, $xtAppConfig, $xtAppVariable, $cookies, $managecookies, $SpinnerService, $state, $log) {
         (function () {
             "use strict";
+
+            //Cart items
+            $scope.cartItems = 0;
+
+
+            $scope.updateCartItems = function (count) {
+                $scope.cartItems = count;
+            }
 
             //Defining the alert messages
             $scope.accountShow = false;
@@ -147,10 +155,13 @@ xtApp.controller('homeController', ['$scope', '$http', '$xoomConfig', 'xtApp.var
                                 $cookies.put('fullname', res.records[0].xtfullname);
                                 $cookies.put('email', res.records[0].xtuseremail);
                                 $cookies.put('country', res.records[0].xtusercountry);
+                                $cookies.put('userid', res.records[0].xtuserid);
                                 //Storing the data to local variables
                                 $managecookies.bind();
                                 //Sign in Fn
                                 fnUseraction();
+                                //Check for cart count
+                                fnCheckcartcount();
                                 // Close Popup
                                 $scope.dismiss();
                                 // TurnOff Spinner
@@ -186,6 +197,24 @@ xtApp.controller('homeController', ['$scope', '$http', '$xoomConfig', 'xtApp.var
                     $scope.alertOperation = { alertDisplay: true, class: 'alert alert-danger', message: exception.message };
                     // TurnOff Spinner
                     $SpinnerService.busyOff();
+                }
+            }
+
+            //Check cart count
+            var fnCheckcartcount = function () {
+                var data = {};
+                try {
+                    data.userid = $xtAppConfig.userid;
+                    $http.post($xtAppConfig.apiUrl + 'cartcount', data).success(function (res, status, headers, conf) {
+                        if (res != undefined && res.status != undefined && res.status.indexOf('success') > -1) {
+                            $scope.updateCartItems(res.records[0].cartItemscount);
+                        }
+                    }).error(function (res, status, headers, conf) {
+                        $log.error(res);
+                    });
+                }
+                catch (e) {
+                    $log.warn(e.message);
                 }
             }
 
