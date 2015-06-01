@@ -4,6 +4,9 @@ xtApp.controller('coursedetailController', ['$scope', '$http', '$xoomConfig', 'x
 
         $scope.courseDetail = [];
 
+        //Course Enrolled Disabled
+        $scope.isEnrollDisabled = false;
+
         if ($stateParams.courseId != undefined && $stateParams.courseId != null) {
             $http.post($xtAppConfig.apiUrl + 'details', { "courseid": $stateParams.courseId }).success(function (res, status, headers, conf) {
                 if (res != undefined && res.status != undefined && res.status.indexOf('success') > -1) {
@@ -13,6 +16,7 @@ xtApp.controller('coursedetailController', ['$scope', '$http', '$xoomConfig', 'x
                     $scope.courseduration = res.records[0].courseduration + ' ' + res.records[0].coursedurationtype;
                     $scope.coursedays = res.records[0].coursedays;
                     $scope.coursetiming = res.records[0].coursestarttime + ' - ' + res.records[0].courseendtime;
+                    $scope.isEnrollDisabled = res.records[0].enrollstatus != undefined && res.records[0].enrollstatus != null ? true : false;
                 }
                 else if (res != undefined && res.status != undefined && res.status.indexOf('error') > -1) {
                     switch (res.ecode) {
@@ -54,7 +58,8 @@ xtApp.controller('coursedetailController', ['$scope', '$http', '$xoomConfig', 'x
 
                 $http.post($xtAppConfig.apiUrl + 'savecart', data).success(function (res, status, headers, conf) {
                     if (res != undefined && res.status != undefined && res.status.indexOf('success') > -1) {
-                        $scope.$parent.updateCartItems(1);
+                        $scope.$parent.updateCartItems(res.records[0].cartItemsCount);
+                        $scope.isEnrollDisabled = true;
                     }
                 }).error(function (res, status, headers, conf) {
                     console.log(res);

@@ -119,7 +119,8 @@
                         <li class="col-md-3">{{coursedays}}</li>
                         <li class="col-md-3">{{coursetiming}}</li>
                     </ul>
-                    <div class="col-md-12 text-center"><button class="btn btn-primary" ng-click="enrollCourse()">Enroll</button></div>
+                    <div class="col-md-12" ng-show="isEnrollDisabled"><span>You have already enrolled for this course.</span></div>
+                    <div class="col-md-12 text-center"><button class="btn btn-primary" ng-disabled="isEnrollDisabled" ng-click="enrollCourse()">Enroll</button></div>
                     <div class="clearfix"></div>
                 </div><!--detail-main ends-->
                 <!--detail tabs starts-->
