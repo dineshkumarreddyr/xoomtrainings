@@ -5,20 +5,23 @@ xtApp.controller('homeController', ['$scope', '$http', '$xoomConfig', 'xtApp.var
             "use strict";
 
             //Cart items
-            $scope.cartItems = 0;
-
+            $scope.cartItems = $xtAppConfig.cartitemCount;
 
             $scope.updateCartItems = function (count) {
-                $scope.cartItems = count;
+                try {
+                    $cookies.put('cartitems', count);
+                    $scope.cartItems = $xtAppConfig.cartitemCount = $cookies.get('cartitems');
+                }
+                catch (e) {
+                    $log.error(e.message);
+                }
             }
-
             //Defining the alert messages
             $scope.accountShow = false;
             $scope.msgClass = "alert alert-success";
 
 
             $scope.alertOperation = { alertDisplay: false, class: 'alert alert-success', message: '' }
-
 
             // Declaring the default array for country
             $scope.countryitems = [];
@@ -235,5 +238,17 @@ xtApp.controller('homeController', ['$scope', '$http', '$xoomConfig', 'xtApp.var
                     console.log('Went wrong with ' + e.message);
                 }
             }
+
+            //For Checkout Page
+            $scope.checkout = function (count) {
+                try {
+                    if (count != undefined && count > 0)
+                        $state.go('home.checkout');
+                    else
+                        $scope.toggle();
+                } catch (e) {
+                    $log.error(e.message);
+                }
+            }
         })();
-    }])
+    }]);

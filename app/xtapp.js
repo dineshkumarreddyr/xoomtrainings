@@ -1,4 +1,4 @@
-var xtApp = angular.module('xtApp', ['ui.router', 'ngCookies', 'mdo-angular-cryptography','xoom.config','xoom.config','ui.bootstrap']);
+var xtApp = angular.module('xtApp', ['ui.router', 'ngCookies', 'mdo-angular-cryptography', 'xoom.config', 'xoom.config', 'ui.bootstrap']);
 
 xtApp.value('$anchorScroll', angular.noop);
 
@@ -54,9 +54,9 @@ xtApp.run(['$rootScope', '$location', '$state', '$timeout', '$cookieStore', '$xo
                 });
         });
         // For Setting up scroll position to top
-        $rootScope.$on('$stateChangeSuccess', function(){
-           document.body.scrollTop = document.documentElement.scrollTop = 0;
-       });
+        $rootScope.$on('$stateChangeSuccess', function () {
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
+        });
     }]);
 
 //Cookie service
@@ -68,6 +68,7 @@ xtApp.factory('managecookies', ['$http', '$cookieStore', '$xoomConfig', function
                 $xtAppConfig.email = $cookies.get('email');
                 $xtAppConfig.country = $cookies.get('country');
                 $xtAppConfig.userid = $cookies.get('userid');
+                $xtAppConfig.cartitemCount = $cookies.get('cartitems');
                 return true;
             }
             return false;
@@ -77,9 +78,13 @@ xtApp.factory('managecookies', ['$http', '$cookieStore', '$xoomConfig', function
                 $cookies.remove('fullname');
                 $cookies.remove('email');
                 $cookies.remove('country');
+                $cookies.remove('cartitems');
+                $cookies.remove('userid')
                 $xtAppConfig.fullname = null;
                 $xtAppConfig.email = null;
                 $xtAppConfig.country = null;
+                $xtAppConfig.cartitemCount = 0;
+                $xtAppConfig.userid = 0;
             }
         }
     }
@@ -103,6 +108,10 @@ xtApp.directive('signupModal', function () {
         link: function (scope, element, attr) {
             scope.dismiss = function () {
                 element.modal('hide');
+            };
+
+            scope.toggle = function () {
+                element.modal('show');
             };
         }
     }
@@ -180,9 +189,9 @@ xtApp.service('SpinnerService', [function () {
                 ).done(function () {
                     isSpinnerOn = false;
                 });
-            }
-            //isSpinnerOn = false;
-            $('[rel="tooltip"]').tooltip();
-        };
+        }
+        //isSpinnerOn = false;
+        $('[rel="tooltip"]').tooltip();
+    };
 
-    }]);
+}]);
