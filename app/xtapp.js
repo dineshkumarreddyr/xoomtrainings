@@ -26,7 +26,8 @@ xtApp.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', '$cry
             templateUrl: 'app/templates/inner/list.html'
         }).state('home.checkout', {
             url: '/checkout',
-            templateUrl: 'app/templates/inner/checkout.html'
+            templateUrl: 'app/templates/inner/checkout.html',
+            controller: 'cartController'
         }).state('home.detail', {
             url: '/details/:courseId',
             templateUrl: 'app/templates/inner/detail.html',
