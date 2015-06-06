@@ -26,7 +26,8 @@ xtApp.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', '$cry
             templateUrl: 'app/templates/inner/list.html'
         }).state('home.checkout', {
             url: '/checkout',
-            templateUrl: 'app/templates/inner/checkout.html'
+            templateUrl: 'app/templates/inner/checkout.html',
+            controller: 'cartController'
         }).state('home.detail', {
             url: '/details/:courseId',
             templateUrl: 'app/templates/inner/detail.html',
@@ -86,8 +87,14 @@ xtApp.factory('managecookies', ['$http', '$cookieStore', '$xoomConfig', function
                 $xtAppConfig.cartitemCount = 0;
                 $xtAppConfig.userid = 0;
             }
+        },
+        zeroCartItems:function(){
+            if($cookies.get('cartitems')!=undefined && $cookies.get('cartitems')!=null){
+                $cookies.remove('cartitems');
+                $xtAppConfig.cartitemCount = 0;
+            }
         }
-    }
+    };
 }]);
 
 //Directive for Alert messages
