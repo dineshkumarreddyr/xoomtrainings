@@ -87,8 +87,14 @@ xtApp.factory('managecookies', ['$http', '$cookieStore', '$xoomConfig', function
                 $xtAppConfig.cartitemCount = 0;
                 $xtAppConfig.userid = 0;
             }
+        },
+        zeroCartItems:function(){
+            if($cookies.get('cartitems')!=undefined && $cookies.get('cartitems')!=null){
+                $cookies.remove('cartitems');
+                $xtAppConfig.cartitemCount = 0;
+            }
         }
-    }
+    };
 }]);
 
 //Directive for Alert messages

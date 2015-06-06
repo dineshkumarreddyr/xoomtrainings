@@ -1,6 +1,6 @@
 ﻿//Controller for Cart Screen
-xtApp.controller('cartController', ['$scope', '$http', '$xoomConfig', 'xtApp.variables', '$stateParams', '$state', '$filter', '$log',
-    function ($scope, $http, $xtAppConfig, $xtAppVariables, $stateParams, $state, $filter, $log) {
+xtApp.controller('cartController', ['$scope', '$http', '$xoomConfig', 'xtApp.variables', '$stateParams', '$state', '$filter', '$log','managecookies',
+    function ($scope, $http, $xtAppConfig, $xtAppVariables, $stateParams, $state, $filter, $log,$manageCookies) {
 
 
         $scope.cartDetail = [];
@@ -24,6 +24,7 @@ xtApp.controller('cartController', ['$scope', '$http', '$xoomConfig', 'xtApp.var
                 $http.post($xtAppConfig.apiUrl + 'removeitem', data).success(function (res, status, headers, conf) {
                     if (res != undefined && res.status != undefined && res.status.indexOf('success') > -1) {
                         $scope.cartDetail.splice(index, 1);
+                        $scope.$parent.updateCartItems(parseInt($xtAppConfig.cartitemCount)-1);
                     }
                 }).error(function (res, status, headers, conf) {
 
