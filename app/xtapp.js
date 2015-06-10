@@ -37,6 +37,10 @@ xtApp.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', '$cry
                     return $crypto.encrypt($stateParams.courseId);
                 }
             }
+        }).state('home.mydetails',{
+            url:'/myprofile',
+            templateUrl:'app/templates/inner/myaccount.html',
+            controller:'myAccountController'
         });
 
         $urlRouterProvider.otherwise("/home/offerings");

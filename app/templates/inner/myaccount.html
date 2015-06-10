@@ -1,0 +1,132 @@
+<div class="container account-main">
+ <div class="row">
+   <div class="col-sm-3">
+     <div class="account-left">
+      <div class="name">{{fullname}}</div>
+      <nav class="nav-sidebar">
+        <ul class="nav tabs">
+          <li class="active"><a href="#tab1" data-toggle="tab">My Profile</a></li>
+          <li class=""><a href="#tab2" data-toggle="tab">My Courses</a></li>
+          <li class=""><a href="#tab3" data-toggle="tab">Payment</a></li>
+          <li class=""><a href="#tab4" data-toggle="tab">Change Password</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- tab content -->
+  <div class="col-md-9 tab-content">
+    <div class="tab-pane active text-style" id="tab1">
+      <h1 class="col-md-12">My Profile</h1>
+      <div class='row'>
+        <div class='col-md-12'>
+          <form id="payment-form" method="post">
+            <div class='form-row'>
+              <div class='col-md-6 form-group'>
+                <label class='control-label'>First Name</label>
+                <input class='form-control' type='text' ng-model="myProfile.firstname" />
+              </div>
+            </div>
+            <div class='form-row'>
+              <div class='col-md-6 form-group'>
+                <label class='control-label'>Last Name</label>
+                <input class='form-control' type='text' ng-model="myProfile.lastname" />
+              </div>
+            </div>
+            <div class='form-row'>
+              <div class='col-md-6 form-group'>
+                <label class='control-label'>Email</label>
+                <input class='form-control card-number' type='text' ng-model="myProfile.email">
+              </div>
+            </div>
+            <div class='form-row'>
+              <div class='col-md-6 form-group'>
+                <label class='control-label'>Country</label>
+                <select class="form-control" ng-model="country" tabindex="1" ng-options="item.countryid as item.countryname for item in countryitems">
+                  <option value="">Select country</option>
+                </select>
+              </div>
+            </div>
+            <div class='form-row'>
+              <div class='col-md-6 form-group'>
+                <label class='control-label'>Mobile</label>
+                <input class='form-control' type='text' ng-model="myProfile.mobilenumber" />
+              </div>
+            </div>
+            <div class='form-row'>
+              <div class='col-md-12 no-pad'>
+               <div class="col-md-3"><button class="btn btn-primary" ng-click="updateProfile();">Update Profile</button></div>
+             </div>
+           </div>
+         </form>
+       </div>
+     </div>
+   </div>
+
+   <div class="tab-pane text-style" id="tab2">
+    <h1 class="col-md-12">My Courses</h1>
+    <div class="row">
+      <div class="col-md-5">
+        <div class="check-box">
+          <div class="clearfix">
+            <div class="col-md-4 no-pad-rt"><img src="images/sap.png" class="img-responsive"></div>
+            <div class="col-md-8">
+              <h4>Hadoop</h4>
+              <div class="hours"><img src="images/hours.png" alt="hours">12 Hours </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="detail">
+              13 July 2015, Mon,Tue,Wed,Thu 09:00 PM to 10:30 PM
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-7 text-center">
+        <div class="check-box clearfix">
+          <div class="col-md-4">Rs.1200</div>
+          <div class="col-md-4">Rs.1400</div>
+          <div class="col-md-4">Rs.1400</div>
+          <div class="col-md-12 remove-check"><a href="#">Remove</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-pane text-style" id="tab4">
+    <h1 class="col-md-12">Change Password</h1>
+    <div class='row'>
+      <div class='col-md-12'>
+        <form id="payment-form" method="post">
+          <div class='form-row'>
+            <div class='col-md-6 form-group'>
+              <label class='control-label'>Old Password</label>
+              <input class='form-control' type='text'>
+            </div>
+          </div>
+          <div class='form-row'>
+            <div class='col-md-6 form-group'>
+              <label class='control-label'>New Password</label>
+              <input class='form-control card-number' type='text'>
+            </div>
+          </div>
+          <div class='form-row'>
+            <div class='col-md-6 form-group'>
+              <label class='control-label'>Retype Password</label>
+              <input class='form-control' type='text'>
+            </div>
+          </div>
+          <div class='form-row'>
+            <div class='col-md-12 no-pad'>
+             <div class="col-md-3"><button class="btn btn-primary">Update Password</button></div>
+           </div>
+         </div>
+       </form>
+     </div>
+   </div>
+ </div>
+</div>
+<!--account left ends-->
+
+</div>
+</div>  
