@@ -7,7 +7,6 @@
         <ul class="nav tabs">
           <li class="active"><a href="#tab1" data-toggle="tab">My Profile</a></li>
           <li class=""><a href="#tab2" data-toggle="tab">My Courses</a></li>
-          <li class=""><a href="#tab3" data-toggle="tab">Payment</a></li>
           <li class=""><a href="#tab4" data-toggle="tab">Change Password</a></li>
         </ul>
       </nav>
@@ -65,18 +64,18 @@
 
    <div class="tab-pane text-style" id="tab2">
     <h1 class="col-md-12">My Courses</h1>
-    <div class="row">
+    <div class="row" ng-repeat="item in userCourses">
       <div class="col-md-5">
         <div class="check-box">
           <div class="clearfix">
-            <div class="col-md-4 no-pad-rt"><img src="images/sap.png" class="img-responsive"></div>
+            <div class="col-md-4 no-pad-rt"><img ng-src="{{item.courseimg}}" class="img-responsive"></div>
             <div class="col-md-8">
               <h4>Hadoop</h4>
-              <div class="hours"><img src="images/hours.png" alt="hours">12 Hours </div>
+              <div class="hours"><img src="app/assets/images/hours.png" alt="hours">{{item.courseduration}} {{item.durationtype}}</div>
             </div>
             <div class="clearfix"></div>
             <div class="detail">
-              13 July 2015, Mon,Tue,Wed,Thu 09:00 PM to 10:30 PM
+            {{item.coursestartdate | date:'dd-MMM-yyyy'}},{{item.coursedays}},{{item.starttime}} - {{item.endtime}}
             </div>
           </div>
         </div>
@@ -84,10 +83,10 @@
 
       <div class="col-md-7 text-center">
         <div class="check-box clearfix">
-          <div class="col-md-4">Rs.1200</div>
-          <div class="col-md-4">Rs.1400</div>
-          <div class="col-md-4">Rs.1400</div>
-          <div class="col-md-12 remove-check"><a href="#">Remove</a></div>
+          <div class="col-md-4">Rs. {{item.indianprice}}</div>
+          <div class="col-md-4">Rs. {{(item.indianprice*12.36)/100 | number:2}}</div>
+          <div class="col-md-4">Rs. {{item.indianprice+(item.indianprice*12.36)/100 | number:2}}</div>
+          <!-- <div class="col-md-12 remove-check"><a href="#">Remove</a></div> -->
         </div>
       </div>
     </div>
@@ -101,24 +100,24 @@
           <div class='form-row'>
             <div class='col-md-6 form-group'>
               <label class='control-label'>Old Password</label>
-              <input class='form-control' type='text'>
+              <input class='form-control' type='password' ng-model='useroldpassword' />
             </div>
           </div>
           <div class='form-row'>
             <div class='col-md-6 form-group'>
               <label class='control-label'>New Password</label>
-              <input class='form-control card-number' type='text'>
+              <input class='form-control card-number' type='password' ng-model='usernewpassword' />
             </div>
           </div>
           <div class='form-row'>
             <div class='col-md-6 form-group'>
               <label class='control-label'>Retype Password</label>
-              <input class='form-control' type='text'>
+              <input class='form-control' type='password' ng-model='userretypenewpassword' />
             </div>
           </div>
           <div class='form-row'>
             <div class='col-md-12 no-pad'>
-             <div class="col-md-3"><button class="btn btn-primary">Update Password</button></div>
+             <div class="col-md-3"><button class="btn btn-primary" ng-click="updatePassword();">Update Password</button></div>
            </div>
          </div>
        </form>

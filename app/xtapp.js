@@ -200,7 +200,7 @@ xtApp.service('SpinnerService', [function () {
                 ).done(function () {
                     isSpinnerOn = false;
                 });
-        }
+            }
         //isSpinnerOn = false;
         $('[rel="tooltip"]').tooltip();
     };
