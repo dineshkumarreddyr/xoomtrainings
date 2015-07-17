@@ -1,157 +1,88 @@
 <div class="container-fluid home-banner">
-    <img src="app/assets/images/banner.png">
-</div>
-<div class="container-fluid home-quote">
-    <button class="btn freedemo-btn">free demo</button>
-</div>
+    <img src="app/assets/images/books.jpg" class="img-responsive" alt="Background image" />
+    <div class="usphone">
+        <h4 class="text-center">US: +1-32144543 &nbsp;&nbsp; IN: +9140-40183355</h4>
+    </div>
+    <div class="textbanner container-fluid">
+        <div class="row">
+            <div class="text-center col-md-8">
+                <h1 class="text-center">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</h1>
+                <input type="text" placeholder="Eg: enter your favourite course" />
+                <i class="fa fa-search"></i>
+            </div>
+        </div>
+    </div>
 
-<h2>Recommended - Live Instructor led courses</h2>
-<!--recommended courses starts-->
-<div class="container recommended">
-    <div class="row">
-        <div class="col-md-12">
-            <div id="Carousel" class="carousel slide">
-                <!-- Carousel items -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="row">
-                            <div class="col-md-3" ng-repeat="course in allCourses | filter:{xtcoursetype:'recommended'}">
-                                <a ui-sref="home.detail({courseId:'{{course.xtcourseid}}'})">
-                                    <div class="recommended-each">
-                                        <img ng-src="{{course.xtcourseimg}}" alt="sap course">
-                                        <div class="course-title">{{course.xtcoursename}}</div>
-                                        <div class="clearfix course-counts">
-                                            <div class="col-md-7 greenText">$ {{course.xtusprice}} | Rs {{course.xtinrprice}}</div>
-                                            <div class="col-md-5 hours"><img src="app/assets/images/hours.png" alt="hours">{{course.xtcourseduration}} Hours</div>
-                                        </div>
-                                        <div class="clearfix course-bottom">
-                                            <div class="col-md-6 learners-count"><span>{{course.courselearners}} Learners</span></div>
-                                            <div class="col-md-6 course-rating">
-                                                <img src="app/assets/images/rating.png"
-                                                     class="img-responsive" alt="rating">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div><!--.row-->
-                    </div><!--.item-->
-
-                    <div class="item">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="recommended-each">
-                                    <a href="#">
-                                        <img src="app/assets/images/sap.png" alt="sap course">
-                                        <div class="course-title"><a href="#">Sap</a></div>
-                                        <div class="clearfix course-counts">
-                                            <div class="col-md-7 greenText">$ 389/- | Rs 1999.00</div>
-                                            <div class="col-md-5 hours"><img src="app/assets/images/hours.png" alt="hours">24 Hours</div>
-                                        </div>
-                                        <div class="clearfix course-bottom">
-                                            <div class="col-md-6 learners-count"><span>500 Learners</div>
-                                            <div class="col-md-6 course-rating">
-                                                <img src="app/assets/images/rating.png"
-                                                     class="img-responsive" alt="rating">
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="col-md-3">
-                                <div class="recommended-each">
-                                    <a href="#">
-                                        <img src="app/assets/images/sap.png" alt="sap course">
-                                        <div class="course-title"><a href="#">Sap</a></div>
-                                        <div class="clearfix course-counts">
-                                            <div class="col-md-7 greenText">$ 389/- | Rs 1999.00</div>
-                                            <div class="col-md-5 hours"><img src="app/assets/images/hours.png" alt="hours">24 Hours</div>
-                                        </div>
-                                        <div class="clearfix course-bottom">
-                                            <div class="col-md-6 learners-count"><span>500 Learners</div>
-                                            <div class="col-md-6 course-rating">
-                                                <img src="app/assets/images/rating.png"
-                                                     class="img-responsive" alt="rating">
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="col-md-3">
-                                <div class="recommended-each">
-                                    <a href="#">
-                                        <img src="app/assets/images/sap.png" alt="sap course">
-                                        <div class="course-title"><a href="#">Sap</a></div>
-                                        <div class="clearfix course-counts">
-                                            <div class="col-md-7 greenText">$ 389/- | Rs 1999.00</div>
-                                            <div class="col-md-5 hours"><img src="app/assets/images/hours.png" alt="hours">24 Hours</div>
-                                        </div>
-                                        <div class="clearfix course-bottom">
-                                            <div class="col-md-6 learners-count"><span>500 Learners</div>
-                                            <div class="col-md-6 course-rating">
-                                                <img src="app/assets/images/rating.png"
-                                                     class="img-responsive" alt="rating">
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="col-md-3">
-                                <div class="recommended-each">
-                                    <a href="#">
-                                        <img src="app/assets/images/sap.png" alt="sap course">
-                                        <div class="course-title"><a href="#">Sap</a></div>
-                                        <div class="clearfix course-counts">
-                                            <div class="col-md-7 greenText">$ 389/- | Rs 1999.00</div>
-                                            <div class="col-md-5 hours"><img src="app/assets/images/hours.png" alt="hours">24 Hours</div>
-                                        </div>
-                                        <div class="clearfix course-bottom">
-                                            <div class="col-md-6 learners-count"><span>500 Learners</div>
-                                            <div class="col-md-6 course-rating">
-                                                <img src="app/assets/images/rating.png"
-                                                     class="img-responsive" alt="rating">
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div><!--.row-->
-                    </div><!--.item-->
-
-                </div><!--.carousel-inner-->
-                <a data-slide="prev" href="#Carousel" class="left carousel-control"><img src="app/assets/images/left.png"></a>
-                <a data-slide="next" href="#Carousel" class="right carousel-control"><img src="app/assets/images/right.png"></a>
-            </div><!--.Carousel-->
+    <div class="slidedown text-center">
+        <div>
+            <a href="/home/offerings#popular">
+                <i class="fa fa-chevron-down"></i>
+            </a>
         </div>
     </div>
 </div>
-<!--recommended courses ends-->
-<!--popular courses starts-->
+
+
+<div class="home-quote">       
+    <div class="text-center col-md-12 bottom-margin">
+        <h1 >Lorem ipsum dolor sit amet Lorem ipsum</h1>
+        <h2>Lorem ipsum dolor sit amet </h2>
+    </div>
+    <div class="container">
+        <div class="row bottom-margin">
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    <a href="#">
+                        <i class="icon big rounded fa fa-calendar"></i>
+                        <h3>Flexible Schedule</h3>
+                    </a>
+                    <p>Reschedule your Batch/Class at Your Convenience</p>
+                </div>
+                <div class="col-md-4">
+                    <a href="#">
+                        <i class="icon big rounded fa fa-desktop"></i>
+                        <h3>Upcoming Classes</h3>
+                    </a>
+                    <p>learn from your experts and get Real-Time Guidance</p>
+                </div>
+                <div class="col-md-4">
+                    <a href="#">
+                        <i class="icon big rounded fa fa-clock-o"></i>
+                        <h3>24 x 7 Support</h3>
+                    </a>
+                    <p>learn from your experts and get Real-Time Guidance</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container">
-    <h2>popular courses</h2>
-    <div class="row popular">
-        <div class="col-md-3 courses" ng-repeat="course in allCourses | filter:{xtcoursetype: 'popular'}">
+    <h2 id="popular">Recommended Courses</h2>
+    <div class="row popular grid">
+        <div class="col-md-3 courses grid-item" ng-repeat="course in allCourses | filter:{xtcoursetype: 'popular'}">
             <a ui-sref="home.detail({courseId:'{{course.xtcourseid}}'})">
                 <div class="recommended-each">
                     <img ng-src="{{course.xtcourseimg}}" alt="sap course">
-                    <div class="course-title">{{course.xtcoursename}}</div>
-                    <div class="clearfix course-counts">
-                        <div class="col-md-7 greenText">$ {{course.xtusprice}} | Rs {{course.xtinrprice}}</div>
-                        <div class="col-md-5 hours"><img src="app/assets/images/hours.png" alt="hours">24 Hours</div>
-                    </div>
-                    <div class="clearfix course-bottom">
-                        <div class="col-md-6 learners-count"><span>{{course.courselearners}} Learners</div>
-                        <div class="col-md-6 course-rating">
-                            <img src="app/assets/images/rating.png"
-                                 class="img-responsive" alt="rating">
+                    <div class="coursedetail">
+                        <div class="col-md-11 overlay">
+
+                            Online Classes: 30 Hrs<br/>
+                            Assignments: 25 Hrs<br/>
+                            Project: 20 Hrs<br/>
+                            Lifetime Access<br/>
+                        </div>
+                        <div class="course-title">{{course.xtcoursename}}</div>
+                        <div class="clearfix course-counts">
+                            <div class="col-md-7 greenText">$ {{course.xtusprice}} | Rs {{course.xtinrprice}}</div>
+                            <div class="col-md-5 hours"><img src="app/assets/images/hours.png" alt="hours">24 Hours</div>
+                        </div>
+                        <div class="clearfix course-bottom">
+                            <div class="col-md-6 learners-count"><span>{{course.courselearners}} Learners</span></div>
+                            <div class="col-md-6 course-rating">
+                                <img src="app/assets/images/rating.png"
+                                class="img-responsive" alt="rating">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -159,95 +90,78 @@
         </div>
         <div class="clearfix"></div>
     </div>
-    <div class="browseall"><a href="#">Browse all Courses</a></div>
-</div>
-<!--popular courses ends-->
-
-<div class="container-fluid features-wrap">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <img src="app/assets/images/schedule.png">
-                <h3>Flexible Schedule</h3>
-                <p>Reschedule your Batch/Class at Your Convenience</p>
-            </div>
-            <div class="col-md-3">
-                <img src="app/assets/images/live.png">
-                <h3>Live Classes</h3>
-                <p>learn from your experts and get Real-Time Guidance</p>
-            </div>
-            <div class="col-md-3">
-                <img src="app/assets/images/support.png">
-                <h3>24 x 7 Support</h3>
-                <p>learn from your experts and get Real-Time Guidance</p>
-            </div>
-            <div class="col-md-3">
-                <img src="app/assets/images/expert.png">
-                <h3>Expert Instructions</h3>
-                <p>learn from your experts and get Real-Time Guidance</p>
-            </div>
-        </div>
+    <div class="row">
+    <div class="text-center xoomviewall"><a href="#">Browse all Courses</a></div>
     </div>
 </div>
-
-<div class="container-fluid footer">
-    <div class="container-fluid videos-wrap">
-        <div class="carousel-reviews">
-            <div class="container">
-                <div class="row">
-                    <h2>watch our latest demo videos</h2>
-                    <div id="carousel-reviews" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <div class="col-md-4 col-sm-6">
-                                    <img src="app/assets/images/training1.png" class="img-responsive">
-                                </div>
-                                <div class="col-md-4 col-sm-6 hidden-xs">
-                                    <img src="app/assets/images/training1.png" class="img-responsive">
-                                </div>
-                                <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
-                                    <img src="app/assets/images/training1.png" class="img-responsive">
-                                </div>
+<div class="home-quote margin-top-20">
+    <div class="container demovideos">
+        <div class="row">
+            <div class="col-md-6 col-xs-12 leftvid"> <img class="img-responsive" src="app/assets/images/live-video.jpg" > </div>
+            <div class="col-md-6">
+                <ul>
+                    <li>
+                        <div class="row padding-bottom-15">
+                            <div class="clearfix col-md-4">
+                                <img class="img-responsive" src="app/assets/images/vid_1.png" alt="Hadoop Training" />
                             </div>
-                            <div class="item">
-                                <div class="col-md-4 col-sm-6">
-                                    <img src="app/assets/images/training1.png" class="img-responsive">
-                                </div>
-                                <div class="col-md-4 col-sm-6 hidden-xs">
-                                    <img src="app/assets/images/training1.png" class="img-responsive">
-                                </div>
-                                <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
-                                    <img src="app/assets/images/training1.png" class="img-responsive">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="col-md-4 col-sm-6">
-                                    <img src="app/assets/images/training1.png" class="img-responsive">
-                                </div>
-                                <div class="col-md-4 col-sm-6 hidden-xs">
-                                    <img src="app/assets/images/training1.png" class="img-responsive">
-                                </div>
-                                <div class="col-md-4 col-sm-6 hidden-sm hidden-xs">
-                                    <img src="app/assets/images/training1.png" class="img-responsive">
-                                </div>
+                            <div class="clearfix col-md-8">
+                                <h4 class="text-left no-mar">Hadoop - Demo Video - Lorem Ipsum Dolor Sit Amet</h4>
+                                <div class="seperator"></div>
+                                <span class="text-left">
+                                    Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor 
+                                </span>
                             </div>
                         </div>
-                        <a class="left carousel-control" href="#carousel-reviews" role="button" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left"></span>
-                        </a>
-                        <a class="right carousel-control" href="#carousel-reviews" role="button" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right"></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row foot-note">
-            <div class="container">
-                XoomTrainings is the market leader in providing SAP online trainig across the globe.
-                We have trained more than 1000 professionals and more than 50 corporates across the globe..
-                <a href="#">View More</a>
+                    </li>
+                    <li>
+                        <div class="row padding-bottom-15">
+                            <div class="clearfix col-md-4">
+                                <img class="img-responsive" src="app/assets/images/vid_2.png" alt="Hadoop Training" />
+                            </div>
+                            <div class="clearfix col-md-8">
+                                <h4 class="text-left no-mar">Hadoop - Demo Video - Lorem Ipsum Dolor Sit Amet</h4>
+                                <div class="seperator"></div>
+                                <span class="text-left">
+                                    Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor 
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row">
+                            <div class="clearfix col-md-4">
+                                <img class="img-responsive" src="app/assets/images/vid_3.jpg" alt="Hadoop Training" />
+                            </div>
+                            <div class="clearfix col-md-8">
+                                <h4 class="text-left no-mar">Hadoop - Demo Video - Lorem Ipsum Dolor Sit Amet</h4>
+                                <div class="seperator"></div>
+                                <span class="text-left">
+                                    Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor 
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
+
+
+<script>
+   $(function() {
+      $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top
+          }, 1000);
+            return false;
+        }
+    }
+});
+  });
+</script>

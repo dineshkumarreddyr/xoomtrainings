@@ -1,6 +1,6 @@
 /* Xoom Config */
 angular.module('xoom.config', []).value('$xoomConfig', {
-    apiUrl: 'http://localhost:9545/',
+    apiUrl: 'http://54.69.43.76:9545/',
     fullname: '',
     email: '',
     country: '',

@@ -70,8 +70,10 @@
     <div class="row">
         <div class="col-md-3 logo"><a ui-sref="home.offerings"><img src="app/assets/images/logo.png" alt="XoomTrainings logo"></a></div>
         <div class="col-md-9">
+           <div class="bannermenu text-center">
             <ul>
-                <li><a href="#">Courses</a></li>
+                <li>About Us</li>
+                <li><a href="/home/offerings#popular">Courses</a></li>
                 <li><a href="#" ng-click="checkout(cartItems)">Cart <img src="app/assets/images/cart.png" alt="cart icon" /><span>{{cartItems}}</span></a></li>
                 <li ng-show="!userloggedin"><a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">Signin/Signup</a></li>
                 <li ng-show="userloggedin">
@@ -87,13 +89,31 @@
                 </li>
             </ul>
         </div>
+
+        <ul class="hide">
+            <li><a href="#">Courses</a></li>
+            <li><a href="#" ng-click="checkout(cartItems)">Cart <img src="app/assets/images/cart.png" alt="cart icon" /><span>{{cartItems}}</span></a></li>
+            <li ng-show="!userloggedin"><a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">Signin/Signup</a></li>
+            <li ng-show="userloggedin">
+                <div class="btn-group" dropdown>
+                    <div class="dropdown-toggle" dropdown-toggle>
+                        <a href="#">Welcome, {{fullname}} &nbsp;<i class="fa fa-chevron-down"></i></a>
+                    </div>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a ui-sref='home.mydetails'>Manage Account</a></li>
+                        <li><a href="#" ng-click="signout()">Sign out</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
     </div>
 </div>
+</div>
 
-<div class="container-fluid menu-wrap">
+<!-- <div class="container-fluid menu-wrap">
     <nav class="navbar">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
+            
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -103,14 +123,24 @@
                 </button>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
+            
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav col-md-2">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-expanded="false"><img src="app/assets/images/menuicon.png" alt="menuicon">Browse Courses</span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Action</a></li>
+                            <li><a href="#"> Data Warehouse Technologies</a></li>
+                            <li><a href="#"> Microstrategy</a></li>
+                            <li><a href="#"> PEGA</a></li>
+                            <li><a href="#"> SAP</a></li>
+                            <li><a href="#"> Oracle</a></li>
+                            <li><a href="#"> Microsoft</a></li>
+                            <li><a href="#"> Database</a></li>
+                            <li><a href="#"> Big Data</a></li>
+                            <li><a href="#"> Testing Tools</a></li>
+                            <li><a href="#"> JAVA</a></li>
+                            <li><a href="#"> Mobile Applications</a></li>
                             <li><a href="#">Another action</a></li>
                             <li><a href="#">Something else here</a></li>
                             <li class="divider"></li>
@@ -120,23 +150,20 @@
                         </ul>
                     </li>
                 </ul>
-                <div class="col-md-3 search pull-right">
-                <input type="text" class="form-control" placeholder="Search" />
-                </div>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
+        
+            </div>
+        </div>
     </nav>
-</div>
+</div> -->
 
 <div ui-view></div>
 
-<div class="container-fluid foot-main">
-    <div class="container">
+<div class="foot-main">
+    <div class="container no-pad">
         <div class="row">
             <div class="col-md-3">
                 <ul>
-                    <li>courses
-                    <li>
+                    <h4>COURSES</h4>
                     <li><a href="#">data warehouse technologies</a></li>
                     <li><a href="#">microstrategy</a></li>
                     <li><a href="#">pega</a></li>
@@ -147,8 +174,8 @@
             </div>
             <div class="col-md-3">
                 <ul>
-                    <li>&nbsp;
-                    <li>
+                    <li>&nbsp;</li>
+                    <li></li>
                     <li><a href="#">database</a></li>
                     <li><a href="#">big data</a></li>
                     <li><a href="#">testing tools</a></li>
@@ -159,31 +186,73 @@
             </div>
             <div class="col-md-3">
                 <ul>
-                    <li>reach out to us 27x7
-                    <li>
-                    <li><a href="#">Web analytics</a></li>
-                    <li><a href="#">Presentations</a></li>
-                    <li><a href="#">Code snippets</a></li>
-                    <li><a href="#">Job board</a></li>
+                    <h4>REACH OUT TO US 27x7</h4>
+                    <li>For courses related info: </li>
+                    <li>+1-610-686-8077 (US toll free)</li>
+                    <li> Email us:   course@xoomtrainings.com</li>
+                    <li>For Support: </li>
+                    <li> +91-404-018-3355 (India)</li>
+                    <li>Email us:  contact@xoomtrainings.com</li>
                 </ul>
             </div>
             <div class="col-md-3">
-                <ul>
-                    <li>Documentation
-                    <li>
-                    <li><a href="#">Product Help</a></li>
-                    <li><a href="#">Developer API</a></li>
-                    <li><a href="#">Product Markdown</a></li>
-                    <li><a href="#">Product Pages</a></li>
-                </ul>
+                <h4>CONNECT WITH US</h4>
+                <a class="youtube pop-upper" title="share with: youtube" href="https://www.youtube.com/channel/UCcUqQgMe_uXB6WkgibwTz4g" target="_blank"> 
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+
+                <a class="google-plus pop-upper" title="share with: google-plus" href="https://plus.google.com/u/0/110513710630949570051/posts" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                    </span> 
+                </a>
+
+                <a class="facebook pop-upper" title="share with: facebook" href="https://www.facebook.com/pages/Xoom-Trainings/436960616453388?fref=ts" target="_blank"> 
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                    </span> 
+                </a>
+
+                <a class="twitter pop-upper" title="share with: twitter" href="https://twitter.com/xoomtrainings" target="_blank"> 
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+
+                <a class="linkedin pop-upper" title="share with: linkedin" href="https://www.linkedin.com/in/xoomtrainings" target="_blank">
+                 <span class="fa-stack fa-lg">
+                     <i class="fa fa-circle fa-stack-2x"></i>
+                     <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                 </span>
+             </a>
+         </div>
+     </div> 
+ </div>
+</div>
+<div class="col-md-12 payment text-center"> 
+    <p>100% Secure Payments. All major credit &#38; debit cards accepted Or Pay by Paypal.</p>
+    <img src="app/assets/images/debit.png" alt="debit" /> 
+</div>
+<div class="col-md-12 foot-copyright">
+    <div class="container no-pad">
+        <div class="row">
+        <div class="col-md-6">
+                <span>2014 - 2015 powered by Innovin IT Solutions Pvt. LTD.. All Rights Reserved. &nbsp; &nbsp;</span>
+            </div>
+            <div class="col-md-6">
+                <a href="#">TERMS &#38; CONDITIONS</a> &nbsp;   
+                <a href="#">PRIVACY POLICY</a>  &nbsp;  
+                <a href="#">ABOUT US</a>   &nbsp; 
+                <a href="#">CAREERS </a>  &nbsp;   
+                <a href="#">CONTACT US</a> 
             </div>
         </div>
     </div>
 </div>
-
-
-
-
-
-
 
