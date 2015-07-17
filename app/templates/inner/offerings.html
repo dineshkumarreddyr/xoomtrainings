@@ -1,167 +1,165 @@
 <div class="container-fluid home-banner">
-    <img src="app/assets/images/books.jpg" class="img-responsive" alt="Background image" />
-    <div class="usphone">
-        <h4 class="text-center">US: +1-32144543 &nbsp;&nbsp; IN: +9140-40183355</h4>
-    </div>
-    <div class="textbanner container-fluid">
-        <div class="row">
-            <div class="text-center col-md-8">
-                <h1 class="text-center">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</h1>
-                <input type="text" placeholder="Eg: enter your favourite course" />
-                <i class="fa fa-search"></i>
-            </div>
-        </div>
-    </div>
+	<img src="app/assets/images/books.jpg" class="img-responsive" alt="Background image" />
+	<div class="usphone">
+		<h4 class="text-center">US: +1-32144543 &nbsp;&nbsp; IN: +9140-40183355</h4>
+	</div>
+	<div class="textbanner container-fluid">
+		<div class="row">
+			<div class="text-center col-md-8">
+				<h1 class="text-center">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</h1>
+				<input type="text" placeholder="Eg: enter your favourite course" />
+				<i class="fa fa-search"></i>
+			</div>
+		</div>
+	</div>
 
-    <div class="slidedown text-center">
-        <div>
-            <a href="/home/offerings#popular">
-                <i class="fa fa-chevron-down"></i>
-            </a>
-        </div>
-    </div>
+	<div class="slidedown text-center">
+		<div>
+			<a href="/home/offerings#popular">
+				<i class="fa fa-chevron-down"></i>
+			</a>
+		</div>
+	</div>
 </div>
-
-
 <div class="home-quote">       
-    <div class="text-center col-md-12 bottom-margin">
-        <h1 >Lorem ipsum dolor sit amet Lorem ipsum</h1>
-        <h2>Lorem ipsum dolor sit amet </h2>
-    </div>
-    <div class="container">
-        <div class="row bottom-margin">
-            <div class="col-md-12">
-                <div class="col-md-4">
-                    <a href="#">
-                        <i class="icon big rounded fa fa-calendar"></i>
-                        <h3>Flexible Schedule</h3>
-                    </a>
-                    <p>Reschedule your Batch/Class at Your Convenience</p>
-                </div>
-                <div class="col-md-4">
-                    <a href="#">
-                        <i class="icon big rounded fa fa-desktop"></i>
-                        <h3>Upcoming Classes</h3>
-                    </a>
-                    <p>learn from your experts and get Real-Time Guidance</p>
-                </div>
-                <div class="col-md-4">
-                    <a href="#">
-                        <i class="icon big rounded fa fa-clock-o"></i>
-                        <h3>24 x 7 Support</h3>
-                    </a>
-                    <p>learn from your experts and get Real-Time Guidance</p>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="text-center col-md-12 bottom-margin">
+		<h1 >Lorem ipsum dolor sit amet Lorem ipsum</h1>
+		<h2>Lorem ipsum dolor sit amet </h2>
+	</div>
+	<!--popular courses starts-->
+	<div class="container">
+		<div class="row bottom-margin">
+			<div class="col-md-12">
+				<div class="col-md-4">
+					<a href="#">
+						<i class="icon big rounded fa fa-calendar"></i>
+						<h3>Flexible Schedule</h3>
+					</a>
+					<p>Reschedule your Batch/Class at Your Convenience</p>
+				</div>
+				<div class="col-md-4">
+					<a href="#">
+						<i class="icon big rounded fa fa-desktop"></i>
+						<h3>Upcoming Classes</h3>
+					</a>
+					<p>learn from your experts and get Real-Time Guidance</p>
+				</div>
+				<div class="col-md-4">
+					<a href="#">
+						<i class="icon big rounded fa fa-clock-o"></i>
+						<h3>24 x 7 Support</h3>
+					</a>
+					<p>learn from your experts and get Real-Time Guidance</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <div class="container">
-    <h2 id="popular">Recommended Courses</h2>
-    <div class="row popular grid">
-        <div class="col-md-3 courses grid-item" ng-repeat="course in allCourses | filter:{xtcoursetype: 'popular'}">
-            <a ui-sref="home.detail({courseId:'{{course.xtcourseid}}'})">
-                <div class="recommended-each">
-                    <img ng-src="{{course.xtcourseimg}}" alt="sap course">
-                    <div class="coursedetail">
-                        <div class="col-md-11 overlay">
+	<h2 id="popular">Recommended Courses</h2>
+	<div class="row popular grid">
+		<div class="col-md-3 courses grid-item" ng-repeat="course in allCourses | filter:{xtcoursetype: 'popular'}">
+			<a ui-sref="home.detail({courseId:'{{course.xtcourseid}}'})">
+				<div class="recommended-each">
+					<img ng-src="{{course.xtcourseimg}}" alt="sap course">
+					<div class="coursedetail">
+						<div class="col-md-11 overlay">
 
-                            Online Classes: 30 Hrs<br/>
-                            Assignments: 25 Hrs<br/>
-                            Project: 20 Hrs<br/>
-                            Lifetime Access<br/>
-                        </div>
-                        <div class="course-title">{{course.xtcoursename}}</div>
-                        <div class="clearfix course-counts">
-                            <div class="col-md-7 greenText">$ {{course.xtusprice}} | Rs {{course.xtinrprice}}</div>
-                            <div class="col-md-5 hours"><img src="app/assets/images/hours.png" alt="hours">24 Hours</div>
-                        </div>
-                        <div class="clearfix course-bottom">
-                            <div class="col-md-6 learners-count"><span>{{course.courselearners}} Learners</span></div>
-                            <div class="col-md-6 course-rating">
-                                <img src="app/assets/images/rating.png"
-                                class="img-responsive" alt="rating">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-    <div class="row">
-    <div class="text-center xoomviewall"><a href="#">Browse all Courses</a></div>
-    </div>
+							Online Classes: 30 Hrs<br/>
+							Assignments: 25 Hrs<br/>
+							Project: 20 Hrs<br/>
+							Lifetime Access<br/>
+						</div>
+						<div class="course-title">{{course.xtcoursename}}</div>
+						<div class="clearfix course-counts">
+							<div class="col-md-7 greenText">$ {{course.xtusprice}} | Rs {{course.xtinrprice}}</div>
+							<div class="col-md-5 hours"><img src="app/assets/images/hours.png" alt="hours">24 Hours</div>
+						</div>
+						<div class="clearfix course-bottom">
+							<div class="col-md-6 learners-count"><span>{{course.courselearners}} Learners</span></div>
+							<div class="col-md-6 course-rating">
+								<img src="app/assets/images/rating.png"
+								class="img-responsive" alt="rating">
+							</div>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="row">
+		<div class="text-center xoomviewall"><a href="#">Browse all Courses</a></div>
+	</div>
 </div>
 <div class="home-quote margin-top-20">
-    <div class="container demovideos">
-        <div class="row">
-            <div class="col-md-6 col-xs-12 leftvid"> <img class="img-responsive" src="app/assets/images/live-video.jpg" > </div>
-            <div class="col-md-6">
-                <ul>
-                    <li>
-                        <div class="row padding-bottom-15">
-                            <div class="clearfix col-md-4">
-                                <img class="img-responsive" src="app/assets/images/vid_1.png" alt="Hadoop Training" />
-                            </div>
-                            <div class="clearfix col-md-8">
-                                <h4 class="text-left no-mar">Hadoop - Demo Video - Lorem Ipsum Dolor Sit Amet</h4>
-                                <div class="seperator"></div>
-                                <span class="text-left">
-                                    Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor 
-                                </span>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="row padding-bottom-15">
-                            <div class="clearfix col-md-4">
-                                <img class="img-responsive" src="app/assets/images/vid_2.png" alt="Hadoop Training" />
-                            </div>
-                            <div class="clearfix col-md-8">
-                                <h4 class="text-left no-mar">Hadoop - Demo Video - Lorem Ipsum Dolor Sit Amet</h4>
-                                <div class="seperator"></div>
-                                <span class="text-left">
-                                    Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor 
-                                </span>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="row">
-                            <div class="clearfix col-md-4">
-                                <img class="img-responsive" src="app/assets/images/vid_3.jpg" alt="Hadoop Training" />
-                            </div>
-                            <div class="clearfix col-md-8">
-                                <h4 class="text-left no-mar">Hadoop - Demo Video - Lorem Ipsum Dolor Sit Amet</h4>
-                                <div class="seperator"></div>
-                                <span class="text-left">
-                                    Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor 
-                                </span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+	<div class="container demovideos">
+		<div class="row">
+			<div class="col-md-6 col-xs-12 leftvid"> <img class="img-responsive" src="app/assets/images/live-video.jpg" > </div>
+			<div class="col-md-6">
+				<ul>
+					<li>
+						<div class="row padding-bottom-15">
+							<div class="clearfix col-md-4">
+								<img class="img-responsive" src="app/assets/images/vid_1.png" alt="Hadoop Training" />
+							</div>
+							<div class="clearfix col-md-8">
+								<h4 class="text-left no-mar">Hadoop - Demo Video - Lorem Ipsum Dolor Sit Amet</h4>
+								<div class="seperator"></div>
+								<span class="text-left">
+									Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor 
+								</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row padding-bottom-15">
+							<div class="clearfix col-md-4">
+								<img class="img-responsive" src="app/assets/images/vid_2.png" alt="Hadoop Training" />
+							</div>
+							<div class="clearfix col-md-8">
+								<h4 class="text-left no-mar">Hadoop - Demo Video - Lorem Ipsum Dolor Sit Amet</h4>
+								<div class="seperator"></div>
+								<span class="text-left">
+									Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor 
+								</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="clearfix col-md-4">
+								<img class="img-responsive" src="app/assets/images/vid_3.jpg" alt="Hadoop Training" />
+							</div>
+							<div class="clearfix col-md-8">
+								<h4 class="text-left no-mar">Hadoop - Demo Video - Lorem Ipsum Dolor Sit Amet</h4>
+								<div class="seperator"></div>
+								<span class="text-left">
+									Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor 
+								</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>
 
-
 <script>
-   $(function() {
-      $('a[href*=#]:not([href=#])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-            $('html,body').animate({
-              scrollTop: target.offset().top
-          }, 1000);
-            return false;
-        }
-    }
-});
-  });
+	$(function() {
+		$('a[href*=#]:not([href=#])').click(function() {
+			if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+				var target = $(this.hash);
+				target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+				if (target.length) {
+					$('html,body').animate({
+						scrollTop: target.offset().top
+					}, 1000);
+					return false;
+				}
+			}
+		});
+	});
 </script>
