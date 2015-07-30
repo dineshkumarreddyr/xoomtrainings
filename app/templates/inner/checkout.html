@@ -1,0 +1,105 @@
+<div class="container-fluid">
+    <div class="container">
+       <div class="row ">
+          <h3>Checkout</h3>
+
+        
+            <div class="col-md-8 col-lg-8 text-right">
+            Select your Currency &nbsp; &nbsp; &nbsp; &nbsp;
+                    <select>
+                      <option  value="usd"> US Dollar    </option>
+                      <option  value="inr"> Indian Ruppe </option>
+                    </select>
+            </div>
+        </div>
+    
+
+        <div class="row checkout-wrap">
+            <!--heads start-->
+            <div class="col-md-8">
+                <div class="row">
+                <div class="pay-wrap"></div>
+                    <div class="col-md-8 check-each"><h3>course details</h3></div>
+                    <div class="col-md-4 check-each">
+
+                        <div class="col-md-12 no-pad"><h3>total value</h3></div>
+                    </div>
+                </div>
+                <!--heads end-->
+                <!--detaisl start-->
+                <div class="row " ng-repeat="cart in cartDetail">
+                    <div class="col-md-8">
+                        <div class="check-box">
+                            <div class="clearfix ">
+                                <div class="col-md-2 remove"><a href="#" ng-click="removeCartItem($index,cart.savedcartid);"><i class="fa fa-times fa-lg"></i></a></div>
+                                   <div class="col-md-4 no-pad-rt"><img ng-src="{{cart.courseimg}}" class="img-responsive">
+                                 </div>
+                                <div class="col-md-6">
+                                    <h4>{{cart.maincoursename}}</h4>
+                                    <div class=" col-md-12 hours"><img src="app/assets/images/hours.png" alt="hours">{{cart.courseduration}} {{cart.durationtype}}
+                                    </div>
+                                    <div class="detail col-md-12 ">
+                                    {{cart.coursestartdate | date:'dd-MMM-yyyy'}}, 
+                                    {{cart.coursedays}}, 
+                                    {{cart.starttime}} - {{cart.endtime}},
+                                    </div>
+                                </div>
+ 
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 text-right">
+                        <div class="check-box clearfix">
+
+                            <div class="col-md-12">Rs. {{cart.indianprice+(cart.indianprice*12.36)/100 | number:2}}</div>
+                        
+                        </div>
+                    </div>
+                </div>
+
+                          <div class="row text-right">
+                            <div class="col-md-12">
+                            <div class="row pay-wrap">
+                             <div class="col-md-6 ">Sub total</div><div class="col-md-6 ">Rs.80000.00 </div>
+                            </div>
+                            <div class="clearfix">&nbsp;</div>
+                            <div class="row">
+                             <div class="col-md-6 ">Service tax (12.36%) </div><div class="col-md-6  ">Rs.12000</div>
+                            </div>
+                             <div class="row pay-wrap">
+                                  <div class="col-md-6 ">Total</div> <div class="col-md-6 ">Rs.92000.00 </div>
+                             </div>
+                                                         <div class="row ">
+                                  <div class="col-md-6 "><input type="checkbox" name="accept" value="">
+                                I have read and accepted the <a href="#">Terms &amp; Conditions</a></div> <div class="col-md-6 "><button class="btn-primary">Proceed to Pay</button> </div>
+                             </div>
+                            </div>
+                          </div>
+                                   
+            </div>
+            <!--detaisl end-->
+            <div class="col-md-1"> &nbsp;</div>
+
+            <div class="col-md-3">
+            
+              <h5><i class="fa fa-mobile"></i>&nbsp;&nbsp;+1-610-686-8077(USA)</h5>
+              <h5><i class="fa fa-mobile"></i>&nbsp;&nbsp;+91-404-018-3355(INDIA)</h5>
+              <input name="firstname" type="text" placeholder="Your name" class="form-control inputmethods">
+              <input name="email" type="text" placeholder="Email address" class="form-control inputmethods">
+              <input name="mobile number" type="text" placeholder="mobile number" class="form-control inputmethods">
+              <textarea rows="2" placeholder="any queries....?" class="form-control inputmethods" style="margin-top:5px;"></textarea>
+              <div class="row">
+               <div class="col-md-12"><button class="addmore">Query</button></div>
+                
+            </div>
+          </div>
+        </div>
+
+       
+
+    <div class="clearfix">&nbsp;</div>
+        
+    </div>
+</div>

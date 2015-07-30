@@ -1,0 +1,251 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="course-heading">Learn and Understand J2SE/J2EE</h4>
+                <div class="col-md-12">
+                    Aquring the properties of one class to another class this is called inheritance.
+                </div>
+                <div class="col-md-12">
+                  <img src="app/assets/images/rating.png" class="img-responsive">
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="course-image">
+                    <img src="app/assets/images/images.jpg" alt="pega course"/>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="detail-mains">
+                    <h3>J2SE/J2EE</h3>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="price fxac">
+                                <span class="current-price">$550</span>            
+                            </div>
+                            <ul class="list">
+                                <li class="list-item">
+                                    <div class="col-md-4">
+                                        <span class="list-left">Starts</span>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <span class="list-right">30-07-2015 to 30-08-2015</span>
+                                    </div>
+                                </li>
+                                <li class="list-item">
+                                    <div class="col-md-4">
+                                        <span class="list-left">Duration</span>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <span class="list-right">2 hours</span>
+                                    </div>
+                                </li>
+                                <li class="list-item">
+                                 <div class="col-md-4">
+                                    <span class="list-left">Days</span>
+                                </div>
+                                <div class="col-md-8">
+                                    <span class="list-right">30 days</span>
+                                </div>
+                            </li>
+                            <li class="list-item">
+                             <div class="col-md-4">
+                                <span class="list-left">Time</span>
+                            </div>
+                            <div class="col-md-8">
+                                <span class="list-right">6:30 am to 8:30 am</span>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                         <div class="col-md-4">
+                            <span class="list-left">Description</span>
+                        </div>
+                        <div class="col-md-8">
+                            <span class="list-right">Lorem Ipsum assets areum lorem ipsum assets areum
+                                Lorem Ipsum assets areum lorem ipsum assets areum Lorem Ipsum assets areum </span>
+                            </div>
+                        </li>
+                       </ul>
+                        <div class="row">
+                            <div class="text-center xoomviewall"><a href="#">Enroll Now</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           <div class="clearfix"></div>
+        </div>
+        <div class="col-md-3">
+            <div class="detail-mains">
+              <h4>Call us @</h4>
+              <h5><i class="fa fa-mobile"></i>&nbsp;&nbsp;+1-610-686-8077(USA)</h5>
+              <h5><i class="fa fa-mobile"></i>&nbsp;&nbsp;+91-404-018-3355(INDIA)</h5>
+              <input name="firstname" type="text" placeholder="Enter Your name" class="form-control inputmethods">
+              <input name="lastname" type="text" placeholder="Last Name" class="form-control inputmethods">
+              <input name="email" type="text" placeholder="Email address" class="form-control inputmethods">
+              <input name="mobile number" type="text" placeholder="mobile number" class="form-control inputmethods">
+              <textarea rows="2" placeholder="any queries....?" class="form-control inputmethods" style="margin-top:5px;"></textarea>
+              <div class="row">
+                <div class="text-center xoomviewall"><a href="#">Query</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<hr/>
+<div class="container-fluid">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-8">
+           <div class="tabbable-panel">
+            <div class="tabbable-line">
+                <ul class="nav nav-tabs ">
+                    <li class="active">
+                        <a href="#tab_1" data-toggle="tab">
+                            About the Course
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tab_2" data-toggle="tab">
+                            Curriculum
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tab_3" data-toggle="tab">
+                            FAQ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tab_4" data-toggle="tab">
+                            Certification
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tab_5" data-toggle="tab">
+                            Infographic
+                        </a>
+                    </li>
+                </ul>
+                <div class="clearfix tab-content">
+                    <div class="tab-pane active" id="tab_1">
+                        <p>{{aboutcourse}}</p>
+                    </div>
+                    <div class="tab-pane" id="tab_2">
+                        <p>{{curriculum}}</p>
+                    </div>
+                    <div class="tab-pane" id="tab_3">
+                        <div class="col-md-12 no-pad">
+                            <div class="panel-group" id="accordion">
+                                <div class="panel" ng-repeat="item in courseDetail">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index}}" class="collapsed">
+                                                {{item.question}}
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse{{$index}}" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p>{{item.answer}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab_4">
+                        <p>Tab 4.</p>
+                        <p>
+                            Duis autem vel eum iriure dolor in hendrerit in vulputate. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat
+                        </p>
+                    </div>
+                    <div class="tab-pane" id="tab_5">
+                        <p>tab 5</p>
+                        <p>
+                           Upload an Image.
+                       </p>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   <div class="col-md-4">
+    <h3>Most Recently Courses</h3>
+    <div class="row" >
+        <div class="col-md-12 related">
+           <div class="row">
+            <div class="col-md-6">
+                <img src="app/assets/images/pega.png" class="img-responsive"alt="pega course">
+            </div>
+            <div class="col-md-6">
+             <div>
+               <a href="#">
+                <p>Lorem ipsum Reslua lorem ipsum asstes </p>
+            </a>
+        </div>
+        <div>
+            <p>$295</p>
+        </div>
+        <div>
+            <img src="app/assets/images/rating.png" class="img-responsive" alt="ratinng">
+        </div>
+    </div>
+</div>
+</div>
+<div class="col-md-12 related">
+   <div class="row">
+    <div class="col-md-6">
+        <img src="app/assets/images/cassandra.png" class="img-responsive"alt="pega course">
+    </div>
+    <div class="col-md-6">
+     <div>
+        <a href="#">
+         <p>Lorem ipsum Reslua lorem ipsum asstes </p>
+     </a>
+ </div>
+ <div>
+    <p>$295</p>
+</div>
+<div>
+    <img src="app/assets/images/rating.png" class="img-responsive" alt="ratinng">
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-12 related">
+   <div class="row">
+    <div class="col-md-6">
+        <img src="app/assets/images/sap.png" class="img-responsive"alt="pega course">
+    </div>
+    <div class="col-md-6">
+     <div>
+        <a href="#">
+           <p>Lorem ipsum Reslua lorem ipsum asstes </p>
+       </a>
+   </div>
+   <div>
+    <p>$295</p>
+</div>
+<div>
+    <img src="app/assets/images/rating.png" class="img-responsive" alt="ratinng">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
