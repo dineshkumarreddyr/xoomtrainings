@@ -16,7 +16,7 @@ a:hover{text-decoration:none}
 .no-pad-rt{padding-right:0px;}
 h2{color:@PrimaryBgClr;text-transform:uppercase;text-align:center;font-weight:600;
 font-size:20px;margin:25px 0;}
-input[type="text"] {height:30px;padding:5px;margin-top:5px;}
+input[type="text"] {height:30px;padding:15px;margin-top:5px;}
 
 /************* HEADER STYLES *******************/
 
@@ -44,7 +44,7 @@ input[type="text"] {height:30px;padding:5px;margin-top:5px;}
   color: #fff;font-size:38px;}
 
 .home-banner .btn-default{margin-left:-13%;float: left;height: 40px;border-radius:40px;}
-.home-quote{background:#f2f2f2;padding-top:30px;padding-bottom:20px;text-align:center;}
+.home-quote{background:#f2f2f2;padding-top:30px;padding-bottom:30px;text-align:center;}
 .home-quote i {font-size:100px; color:#888888;}
 .home-quote i:hover {font-size:100px; font-weight:600; color:#888888;}
 .home-quote h1{font-weight:600; font-size: 35px; color:#888888;}
@@ -62,15 +62,15 @@ border-bottom-left-radius: 10px;background:#5a5a5a;color:#fff;text-transform:upp
 .recommended .carousel-control.right{right:-30px;background:none;opacity:1}
 .recommended .carousel-control.left {left:-29px;background:none;opacity:1}
 
-.recommended-each{padding:@basezero;margin-bottom:20px}
+.recommended-each{padding:@basezero;margin-bottom:30px}
 .recommended-each:hover{background:#f8f8f8}
-.recommended-each img{width:260px;}
+.recommended-each img{width:261px;}
 .recommended-each a img{width:100%}
 .course-title{text-align:center;padding-top:10px;padding-bottom:10px;}
 .course-title a{text-transform:uppercase;font-weight:600;color:@PrimaryBgClr;font-size:18px;}
 .course-title a:hover{text-decoration:none}
 
-.course-counts{padding-bottom:10px;padding-top:10px;border-top:1px solid #d2d2d2;border-bottom:1px solid #d2d2d2}
+.course-counts{padding-bottom:10px;padding-top:10px;border-top:1px solid #eaeaea;border-bottom:1px solid #eaeaea;}
 .greenText{color:#47ba3f;font-size:13px;padding-right:0;padding-left:10px;}
 .hours{color:#585858;font-size:13px;padding-right:0;padding-left:10px;}
 .hours img{margin-right:5px;max-width:20px;}
@@ -81,6 +81,8 @@ border-bottom-left-radius: 10px;background:#5a5a5a;color:#fff;text-transform:upp
 .browseall{background:url(../../assets/images/browse.png) repeat-x;padding:10px;color:#fff;
 text-transform:uppercase;text-align:center;margin:0 auto;width:50%;margin-bottom:20px}
 .browseall a{color:#fff;}
+.course-rating .fa { color:#edc848;}
+ .fa-stack{color:#67727a;}
 
 .features-wrap{background:#f2f2f2;padding:20px 0 10px 0px;text-align:center; width:100%;}
 .features-wrap h3{color:#333000;font-size:18px;font-weight:200;}
@@ -122,9 +124,10 @@ text-transform:uppercase;text-align:center;margin:0 auto;width:50%;margin-bottom
 .courses-head{text-transform:uppercase;padding:10px 0;font-weight: bold;}
 .courses-head img{margin-right:10px;max-width:25px;margin-left:15px;}
 .courses-left ul{padding:0;margin:0;border:0px solid #ddd;}
-.courses-left ul li{list-style-type:none;border-bottom:1px solid #ddd;background:#fff;font-weight: bold;padding:5px 0;}
+.courses-left ul li{list-style-type:none;border-bottom:1px solid #ddd;background:#fff;padding:5px 0;last-child:none;}
 .courses-left ul li img{margin-right:10px;max-width:25px;margin-left:15px;}
-.courses-left ul li a{color:@PrimaryBgClr;text-transform:uppercase;line-height:30px;font-weight: bold;}
+.courses-left ul li a{color:@PrimaryBgClr;text-transform:uppercase;line-height:30px;}
+.courses-left ul li.course:last-child{background-color:#fff;}
 
 /*************** DETAIL PAGE *******************/
 
@@ -169,7 +172,7 @@ background:#fff;text-transform:uppercase;font-size: 12px;margin-bottom: 10px;}
 
 .checkout-wrap{margin-bottom:30px;}
 .check-each h3{color:#353535;text-transform:uppercase;padding:10px;
-margin:0 0 15px 0;font-size:12px;text-align:center;}
+margin:0 0 15px 0;font-size:12px;}
 .check-box{padding-top:15px;min-height:122px;
 margin-bottom:10px;}
 .check-box h4{color:#353535;font-size:16px;text-transform:uppercase;font-weight:600;
@@ -188,7 +191,7 @@ margin-bottom:10px;text-transform:uppercase;border:none;margin-top:5px;}
 .apply{background:@PrimaryBgClr;font-size:13px;text-transform:uppercase;color:#fff;
 border:none;height:30px;}
 .line{height:1px;background:#ddd;margin-top:5px;margin-bottom:5px;width:100%;}
-.pay-wrap{padding-top:15px;padding-bottom:15px;border-top:1px solid #ddd;}
+.pay-wrap{padding-top:6px;padding-bottom:15px;border-top:1px solid #ddd;margin-top:9px;}
 .pay-wrap button{background:@PrimaryBgClr;color:#fff;border:none;padding:5px 10px;
 margin-left:20px;}
 
@@ -233,7 +236,7 @@ transition: all 0.08s linear;}
 }
 .open .dropdown-menu > li > a:hover,.open .dropdown-menu > li > a:focus{background:none;}
 .navbar{min-height: 30px;}
-.textbanner{position:absolute;top:calc(100vh-65%);margin-left:25%;}
+.textbanner{position:absolute;top:calc(100vh-65%);margin-left:30%;margin-right:30%;}
 .textbanner input[type=text]{padding:20px;margin-top:20px;width:40%;background:transparent;border:3px solid #fff;color:#fff;}
 .textbanner i.fa{color:#fff;position:relative;left:-30px;font-size:16px;}
 .slidedown i.fa{position:absolute;top:calc(100vh-10%);color:#fff;font-size:30px;}
@@ -336,7 +339,7 @@ transition: all 0.08s linear;}
   z-index:99;
 }
 .recommended-each{
-  border:1px solid #cfcfcf;
+  border:1px solid #eaeaea;
   z-index:9;
 }
 .home-banner .usphone{
@@ -372,9 +375,9 @@ padding-bottom:15px;
   margin-top:20px;
   }
 .subscribe{
-  width:265px;background:#FFF; padding:8px; border:1px solid #B9B3B3;
+  padding:5px 12px 5px 10px;
+  background:#337ab7;color:#fff;text-align:center;
 }
-
 .rating {
   unicode-bidi: bidi-override;
   direction: rtl;
@@ -401,6 +404,12 @@ padding-bottom:15px;
 .course-heading {
   font-size: 25px;
   margin: 30px 0 10px 0;
+  font-weight: 200px;
+  color:#333;
+}
+.course-heading-checkout {
+  font-size: 25px;
+  margin: 30px 0 10px 15px;
   font-weight: 200px;
   color:#333;
 }
@@ -464,10 +473,23 @@ padding-bottom:15px;
   box-shadow:none;
   border-radius:0px;
 }
+.textareaquery{
+  margin-top:5px;
+  padding:13px;
+}
+.detailheader{
+      margin-top: 4px;
+    margin-bottom: -10px;
+    padding:12px;
+}
+.prices{
+  padding:12px;
+}
 
 /* courselist page by sunil*/
 .searchbox{
     margin: 20px 0 10px;
+    padding-left:5px;
 }
 .search{
   border-radius:2px;
@@ -477,7 +499,7 @@ padding-bottom:15px;
   border: 1px solid #eee;
 }
 .searchicon{
-    left:742px;
+    left:614px;
     position: absolute;
     margin-top: -36px;
 }
@@ -487,7 +509,7 @@ padding-bottom:15px;
   color: rgba(6,6,6,0.0);
   height: 121px;
   position:absolute;
-  width:213px;
+  width:210px;
   transition:background-color 0.3s ease-in;
   padding-top:20px;
 }
@@ -503,6 +525,9 @@ padding-bottom:15px;
 }
 .spacing{
   margin-top: 40px;margin-bottom: 20px;
+}
+.courselistpadding{
+  padding:5px;
 }
 
 /* custom styles by aplaraju in checkout page*/
@@ -528,4 +553,104 @@ padding-bottom:15px;
 .back-to-top:hover, back-to-top:active, .back-to-top:focus, {color:rgba(0,0,0,0.6); text-decoration:none}
 .back-to-top i {
  font-weight:bold;
+}
+
+.show-more{
+      font-size: 15px;
+    line-height: 11px;
+    color: #333;
+    font-weight: normal;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid #f2f2f2;
+    padding: 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    margin-bottom:10px;
+}
+
+.selectcart{
+      padding: 4px 10px;
+}
+.checkboxterms{
+  margin:12px 0 8px;
+}
+/* subscribe */
+.input-group {
+    margin: 20px auto;
+    width: 100%;
+}
+.subscribeinput {
+    outline: none;
+    width: 50%;
+    height: 40px;
+    cursor: auto;
+    text-align: left;
+    border: 1px solid #ccc;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.subscribebutton{
+    background:#337ab7;
+    border: none;
+    color: #fff;
+    padding: 0;
+    outline: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    height: 40px;
+    font-size: 17px;
+    margin-left: -5px;
+    font-family: "Roboto",sans-serif;
+}
+/* aboutus */
+.aboutuspadding{
+  margin-bottom:20px;
+}
+.aboutusimage{
+  width:100%;
+}
+
+
+/*sticky header*/
+.topmargin{
+  margin-top:60px;
+}
+.navbar-default {background-color:#FFF;}
+.navbar-default .navbar-nav > li > a {
+        float: left;
+    padding:10 20 0 20px;
+    color: #333;
+    list-style: none;
+    font-size: 15px;
+    line-height: 35px; margin-left:0px;
+}
+.navbar-default .navbar-nav > li > a:hover{color:#385cc2;border-bottom:2px solid #385cc2;font-weight:500; line-height: 35px; padding:10 20 0 20px;}
+
+.dropdown-menu > li > a {
+    float: left;
+    padding: 10px;
+    color: #333;
+    list-style: none;
+    font-size: 15px;
+    line-height: 50px; margin-left:0px;
+}
+.dropdown-menu > li > a:hover {
+  color:#385cc2;border-bottom:2px solid #385cc2;font-weight:500; width:100%;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus  {
+    color: #385cc2;
+    background-color: transparent;
+}
+.open ul {padding-top:0px; padding-bottom:0px;} 
+.open ul li {
+    float: none;
+    margin-left: 0px;
+    border-bottom: 0px;
+    padding:0px;
 }

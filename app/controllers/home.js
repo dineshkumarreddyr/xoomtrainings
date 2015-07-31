@@ -19,10 +19,7 @@ xtApp.controller('homeController', ['$scope', '$http', '$xoomConfig', 'xtApp.var
             //Defining the alert messages
             $scope.accountShow = false;
             $scope.msgClass = "alert alert-success";
-
-
             $scope.alertOperation = { alertDisplay: false, class: 'alert alert-success', message: '' }
-
             // Declaring the default array for country
             $scope.countryitems = [];
 
@@ -117,20 +114,20 @@ xtApp.controller('homeController', ['$scope', '$http', '$xoomConfig', 'xtApp.var
                             else if (res != undefined && res.status != undefined && res.status.indexOf('error') > -1) {
                                 switch (res.ecode) {
                                     case 'e1':
-                                        $scope.alertOperation = { alertDisplay: true, class: 'alert alert-danger', message: $xtAppVariable.accountExists };
+                                    $scope.alertOperation = { alertDisplay: true, class: 'alert alert-danger', message: $xtAppVariable.accountExists };
                                         // TurnOff Spinner
                                         $SpinnerService.busyOff();
                                         break;
+                                    }
                                 }
-                            }
-                        }).error(function (res, status, headers, config) {
-                            $scope.alertOperation = { alertDisplay: true, class: 'alert alert-danger', message: $xtAppVariable.apiFail };
+                            }).error(function (res, status, headers, config) {
+                                $scope.alertOperation = { alertDisplay: true, class: 'alert alert-danger', message: $xtAppVariable.apiFail };
                             // TurnOff Spinner
                             $SpinnerService.busyOff();
                         });
-                    }
-                    else {
-                        $scope.alertOperation = { alertDisplay: true, class: 'alert alert-danger', message: $xtAppVariable.accountMandatory };
+                        }
+                        else {
+                            $scope.alertOperation = { alertDisplay: true, class: 'alert alert-danger', message: $xtAppVariable.accountMandatory };
                         // TurnOff Spinner
                         $SpinnerService.busyOff();
                     }
@@ -173,26 +170,26 @@ xtApp.controller('homeController', ['$scope', '$http', '$xoomConfig', 'xtApp.var
                             else if (res != undefined && res.status != undefined && res.status.indexOf('error') > -1) {
                                 switch (res.ecode) {
                                     case 'e2':
-                                        $scope.alertOperation = { alertDisplay: true, class: 'alert alert-danger', message: $xtAppVariable.noLogin };
+                                    $scope.alertOperation = { alertDisplay: true, class: 'alert alert-danger', message: $xtAppVariable.noLogin };
                                         // TurnOff Spinner
                                         $SpinnerService.busyOff();
                                         break;
-                                    case 'e3':
+                                        case 'e3':
                                         $scope.alertOperation = { alertDisplay: true, class: 'alert alert-danger', message: $xtAppVariable.apiFail };
                                         // TurnOff Spinner
                                         $SpinnerService.busyOff();
                                         break;
+                                    }
                                 }
-                            }
 
-                        }).error(function (res, status, headers, conf) {
-                            $scope.alertOperation = { alertDisplay: true, class: 'alert alert-danger', message: $xtAppVariable.apiFail };
+                            }).error(function (res, status, headers, conf) {
+                                $scope.alertOperation = { alertDisplay: true, class: 'alert alert-danger', message: $xtAppVariable.apiFail };
                             // TurnOff Spinner
                             $SpinnerService.busyOff();
                         });
-                    }
-                    else {
-                        $scope.alertOperation = { alertDisplay: true, class: 'alert alert-danger', message: $xtAppVariable.accountMandatory };
+                        }
+                        else {
+                            $scope.alertOperation = { alertDisplay: true, class: 'alert alert-danger', message: $xtAppVariable.accountMandatory };
                         // TurnOff Spinner
                         $SpinnerService.busyOff();
                     }

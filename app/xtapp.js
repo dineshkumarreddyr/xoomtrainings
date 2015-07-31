@@ -28,6 +28,10 @@ xtApp.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', '$cry
             url: '/checkout',
             templateUrl: 'app/templates/inner/checkout.html',
             controller: 'cartController'
+        }).state('home.aboutus', {
+            url: '/aboutus',
+            templateUrl: 'app/templates/inner/aboutus.html',
+            controller: 'aboutusController'
         }).state('home.detail', {
             url: '/details/:courseId',
             templateUrl: 'app/templates/inner/detail.html',

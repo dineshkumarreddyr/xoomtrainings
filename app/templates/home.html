@@ -65,80 +65,56 @@
 </div>
 <!--login modal ends-->
 
-<div class="container-fluid">
-    <div class="container header">
-        <div class="row">
-            <div class="col-md-3 logo"><a ui-sref="home.offerings"><img src="app/assets/images/logo.png" alt="XoomTrainings logo"></a></div>
-            <div class="col-md-9">
-               <div class="bannermenu text-center">
-                <ul>
-                    <li>About Us</li>
-                    <li><a href="/home/offerings#popular">Courses</a></li>
-                    <li><a href="#" ng-click="checkout(cartItems)">Cart <img src="app/assets/images/cart.png" alt="cart icon" /><span>{{cartItems}}</span></a></li>
-                    <li ng-show="!userloggedin"><a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">Signin/Signup</a></li>
-                    <li ng-show="userloggedin">
-                        <div class="btn-group" dropdown>
-                            <div class="dropdown-toggle" dropdown-toggle>
-                                <a href="#">Welcome, {{fullname}} &nbsp;<i class="fa fa-chevron-down"></i></a>
-                            </div>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a ui-sref='home.mydetails'>Manage Account</a></li>
-                                <li><a href="#" ng-click="signout()">Sign out</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <ul class="hide">
-                <li><a href="#">Courses</a></li>
-                <li><a href="#" ng-click="checkout(cartItems)">Cart <img src="app/assets/images/cart.png" alt="cart icon" /><span>{{cartItems}}</span></a></li>
-                <li ng-show="!userloggedin"><a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">Signin/Signup</a></li>
-                <li ng-show="userloggedin">
-                    <div class="btn-group" dropdown>
-                        <div class="dropdown-toggle" dropdown-toggle>
-                            <a href="#">Welcome, {{fullname}} &nbsp;<i class="fa fa-chevron-down"></i></a>
-                        </div>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a ui-sref='home.mydetails'>Manage Account</a></li>
-                            <li><a href="#" ng-click="signout()">Sign out</a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </div>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+     <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+        </button>
+        <a class="navbar-brand" ui-sref="home.offerings"><img src="app/assets/images/logo.png" alt="XoomTrainings logo"></a>
     </div>
-</div>
-</div>
-<div ui-view></div>
 
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">About Us</a></li>
+        <li><a href="/home/offerings#popular">Courses</a></li>
+        <li><a href="#" ng-click="checkout(cartItems)">Cart <img src="app/assets/images/cart.png" alt="cart icon" /><span>{{cartItems}}</span></a></li>
+        <li  ng-show="userloggedin">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Welcome, {{fullname}} &nbsp;<i class="fa fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a ui-sref='home.mydetails'>Manage Account</a></li>
+              <li><a href="#" ng-click="signout()">Sign out</a></li>
+          </ul>
+      </li>
+      <li ng-show="!userloggedin"><a href="#" data-toggle="modal" data-target=".bs-example-modal-lg">Signin/Signup</a></li>
+  </ul>
+</div>
+
+</div>
+</div>
+</nav>
+<div ui-view></div>
 <div class="foot-main">
     <div class="container no-pad">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <ul>
                     <h4>COURSES</h4>
-                    <li><a href="#">data warehouse technologies</a></li>
-                    <li><a href="#">microstrategy</a></li>
-                    <li><a href="#">pega</a></li>
-                    <li><a href="#">sap</a></li>
-                    <li><a href="#">oracle</a></li>
-                    <li><a href="#">microsoft</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About US</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Payments</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Site Map</a></li>
+                    <li><a href="#">Careers </a></li>
                 </ul>
             </div>
-            <div class="col-md-3">
-                <ul>
-                    <li>&nbsp;</li>
-                    <li></li>
-                    <li><a href="#">database</a></li>
-                    <li><a href="#">big data</a></li>
-                    <li><a href="#">testing tools</a></li>
-                    <li><a href="#">java</a></li>
-                    <li><a href="#">mobile applications</a></li>
-                    <li><a href="#">other courses</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3">
+            
+            <div class="col-md-4">
                 <ul>
                     <h4>REACH OUT TO US 27x7</h4>
                     <li>For courses related info: </li>
@@ -149,7 +125,7 @@
                     <li>Email us:  contact@xoomtrainings.com</li>
                 </ul>
             </div>
-            <div class="col-md-3 text-center">
+            <div class="col-md-4 text-center">
                 <h4>CONNECT WITH US</h4>
                 <a class="youtube pop-upper" title="share with: youtube" href="https://www.youtube.com/channel/UCcUqQgMe_uXB6WkgibwTz4g" target="_blank"> 
                     <span class="fa-stack fa-lg">
@@ -180,26 +156,27 @@
                 </a>
 
                 <a class="linkedin pop-upper" title="share with: linkedin" href="https://www.linkedin.com/in/xoomtrainings" target="_blank">
-                 <span class="fa-stack fa-lg">
-                     <i class="fa fa-circle fa-stack-2x"></i>
-                     <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                 </span>
-             </a>
-         
-         <h4>Get This Newupdates</h4>
-         <input type="text" class="subscribe text-center" name="emailid" placeholder="Email id"/>
-         <div class="row">
-           <div class="text-center xoomviewall">
-            <a href="#">Subscribe</a>
+                   <span class="fa-stack fa-lg">
+                       <i class="fa fa-circle fa-stack-2x"></i>
+                       <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                   </span>
+               </a>
+               
+               <h4>For futer updates</h4>
+               <div class="row">
+                <div class="input-group ">
+                    <input class="btn btn-lg subscribeinput" name="email" id="email" type="email" placeholder="Email id" required="">
+                    <button class="btn btn-info btn-lg subscribebutton" type="submit">Subscribe</button>
+                </div>
+
             </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-lg-2 col-md-2 col-md-2 col-sm-2">
+             <a href="#" class="back-to-top"> <i class="fa fa-chevron-circle-up fa-3x"></i></a>
          </div>
-    </div>
-    <div class="row text-center">
-      <div class="col-lg-2 col-md-2 col-md-2 col-sm-2">
-       <a href="#" class="back-to-top"> <i class="fa fa-chevron-circle-up fa-3x"></i></a>
-   </div>
-</div>
-</div> 
+     </div>
+ </div> 
 </div>
 </div>
 <div class="col-md-12 payment text-center"> 
@@ -212,12 +189,9 @@
             <div class="col-md-6">
                 <span>2014 - 2015 powered by Innovin IT Solutions Pvt. LTD.. All Rights Reserved. &nbsp; &nbsp;</span>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 text-right">
                 <a href="#">TERMS &#38; CONDITIONS</a> &nbsp;   
-                <a href="#">PRIVACY POLICY</a>  &nbsp;  
-                <a href="#">ABOUT US</a>   &nbsp; 
-                <a href="#">CAREERS </a>  &nbsp;   
-                <a href="#">CONTACT US</a> 
+                <a href="#">PRIVACY POLICY</a>  &nbsp;                  
             </div>
         </div>
     </div>

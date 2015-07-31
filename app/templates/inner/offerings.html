@@ -5,7 +5,7 @@
 	</div>
 	<div class="textbanner container-fluid">
 		<div class="row">
-			<div class="text-center col-md-8">
+			<div class="text-center col-md-12 col-lg-12">
 				<h1 class="text-center">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet</h1>
 				<input type="text" placeholder="Eg: enter your favourite course" />
 				<i class="fa fa-search"></i>
@@ -78,8 +78,12 @@
 						</div>
 						<div class="clearfix course-bottom">
 							<div class="col-md-6 learners-count"><span>{{course.courselearners}} Learners</span></div>
-							<div class="col-md-6 course-rating">
-								<img src="app/assets/images/rating.png"class="img-responsive" alt="rating">
+							<div class="col-md-6 course-rating text-right">
+								<i class="fa fa-star"></i> 
+								<i class="fa fa-star"></i> 
+								<i class="fa fa-star"></i> 
+								<i class="fa fa-star"></i> 
+								<i class="fa fa-star"></i>
 							</div>
 						</div>
 					</div>
@@ -88,8 +92,8 @@
 		</div>
 		<div class="clearfix"></div>
 	</div>
-	<div class="row">
-		<div class="text-center xoomviewall"><a href="">Browse all Courses</a></div>
+	<div class="row text-center">
+		<button class="btn btn-info btn-lg subscribebutton" type="submit">Browse all courses</button>
 	</div>
 </div>
 <div class="home-quote margin-top-20">

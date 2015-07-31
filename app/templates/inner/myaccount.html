@@ -1,4 +1,4 @@
-<div class="container account-main">
+<div class="container topmargin account-main">
  <div class="row">
    <div class="col-sm-3">
      <div class="account-left">
@@ -54,15 +54,19 @@
             </div>
             <div class='form-row'>
               <div class='col-md-12 no-pad'>
-               <div class="col-md-3"><button class="btn btn-primary" ng-click="updateProfile();">Update Profile</button></div>
-             </div>
-           </div>
-         </form>
-       </div>
-     </div>
-   </div>
+              <div class="col-md-3">
 
-   <div class="tab-pane text-style" id="tab2">
+                <button class="btn btn-info btn-lg subscribebutton" type="submit">Update Profile</button>
+                
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-pane text-style" id="tab2">
     <h1 class="col-md-12">My Courses</h1>
     <div class="row" ng-repeat="item in userCourses">
       <div class="col-md-5">
@@ -75,7 +79,7 @@
             </div>
             <div class="clearfix"></div>
             <div class="detail">
-            {{item.coursestartdate | date:'dd-MMM-yyyy'}},{{item.coursedays}},{{item.starttime}} - {{item.endtime}}
+              {{item.coursestartdate | date:'dd-MMM-yyyy'}},{{item.coursedays}},{{item.starttime}} - {{item.endtime}}
             </div>
           </div>
         </div>
